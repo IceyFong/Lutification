@@ -1,0 +1,101 @@
+/*
+
+Vivado v2016.3 (64-bit)
+SW Build 1682563 on Mon Oct 10 19:07:26 MDT 2016
+Process ID: 15488
+
+Current time: 	5/8/20 1:59:26 PM BST
+Time zone: 	Greenwich Mean Time (Europe/London)
+
+OS: CentOS Linux release 7.7.1908 (Core)
+Version: 3.10.0-1062.4.1.el7.x86_64
+Architecture: amd64
+Available processors (cores): 40
+
+DISPLAY: localhost:10.0
+Screen size: 1792x1098
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	/mnt/applications/Xilinx/16.3/Vivado/2016.3/tps/lnx64/jre
+
+User name: 	jf2715
+User home directory: /home/jf2715
+User working directory: /home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2
+User country: 	GB
+User language: 	en
+User locale: 	en_GB
+
+RDI base root directory: /mnt/applications/Xilinx/16.3/Vivado
+RDI data directory: /mnt/applications/Xilinx/16.3/Vivado/2016.3/data
+RDI bin directory: /mnt/applications/Xilinx/16.3/Vivado/2016.3/bin
+
+Vivado preferences path: /home/jf2715/.Xilinx/Vivado/2016.3/vivado.ini
+Vivado layouts directory: /home/jf2715/.Xilinx/Vivado/2016.3/layouts
+
+GUI allocated memory:	149 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,992 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 31 MB (+29888kb) [00:00:25]
+// [Engine Memory]: 4,992 MB (+5083482kb) [00:00:25]
+// Opening Vivado Project: lfcW1A1-pynqZ1-Z2.xpr. Version: Vivado v2016.3 
+// bt:g (cd:JFrame):  Open Project : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 4,997 MB. GUI used memory: 22 MB. Current time: 5/8/20 1:59:26 PM BST
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project lfcW1A1-pynqZ1-Z2.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 40 MB (+8098kb) [00:01:22]
+// [GUI Memory]: 55 MB (+13284kb) [00:01:25]
+// [GUI Memory]: 59 MB (+980kb) [00:02:42]
+// Tcl Message: open_project lfcW1A1-pynqZ1-Z2.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jf2715/BNN-PYNQ/bnn/src/network/output/hls-syn/lfcW1A1-pynqZ1-Z2/sol1/impl/ip'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/mnt/applications/Xilinx/16.3/Vivado/2016.3/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 5,115 MB. GUI used memory: 36 MB. Current time: 5/8/20 2:01:37 PM BST
+// Tcl Message: open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:02:10 . Memory (MB): peak = 6105.473 ; gain = 109.387 ; free physical = 151665 ; free virtual = 257602 
+// Project name: lfcW1A1-pynqZ1-Z2; location: /home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2; part: xc7z020clg400-1
+dismissDialog("Open Project"); // bt:g (cd:JFrame)
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking too long to process. Increasing delay to 3000 ms.
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 65 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aA:FrameContainer (ContainerContainer:JideSplitPane, cd:JFrame)
+// Elapsed time: 205 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, procsys_wrapper (procsys_wrapper.v)]", 1); // y:i (D:JPanel, cd:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, procsys_wrapper (procsys_wrapper.v)]", 1); // y:i (D:JPanel, cd:JFrame)
+// Elapsed time: 48 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, procsys_wrapper (procsys_wrapper.v)]", 1); // y:i (D:JPanel, cd:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, procsys_wrapper (procsys_wrapper.v), procsys_i - procsys (procsys.bd)]", 2); // y:i (D:JPanel, cd:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, procsys_wrapper (procsys_wrapper.v), procsys_i - procsys (procsys.bd)]", 2); // y:i (D:JPanel, cd:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, procsys_wrapper (procsys_wrapper.v), procsys_i - procsys (procsys.bd), procsys (procsys.v)]", 3); // y:i (D:JPanel, cd:JFrame)
+// [GUI Memory]: 63 MB (+1039kb) [00:15:31]
+// [GUI Memory]: 66 MB (+207kb) [00:20:06]
+// [GUI Memory]: 69 MB (+280kb) [00:25:21]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,132 MB. GUI used memory: 36 MB. Current time: 5/8/20 2:31:38 PM BST
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking too long to process. Increasing delay to 3000 ms.
+// [GUI Memory]: 74 MB (+764kb) [00:39:01]
+// [GUI Memory]: 78 MB (+257kb) [00:49:22]
+// [GUI Memory]: 82 MB (+35kb) [00:56:57]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,132 MB. GUI used memory: 34 MB. Current time: 5/8/20 3:01:38 PM BST
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking too long to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking too long to process. Increasing delay to 5000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking too long to process. Increasing delay to 6000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking too long to process. Increasing delay to 7000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,132 MB. GUI used memory: 34 MB. Current time: 5/8/20 3:31:38 PM BST
+// [GUI Memory]: 87 MB (+1028kb) [01:41:27]

@@ -1,0 +1,699 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="operator []" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="StreamLimiter" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="SameResize" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="StreamingCast" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="StreamingDataWidthConverter_Batch" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="StreamingDataWidthConverter_Batch" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="StreamingDataWidthConverter_Batch" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="DuplicateStreams" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AddStreams" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AddStreams" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="AddStreamsLayer_Batch" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="MultiChanDataWidthConverter_Batch" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="MultiChanDataWidthConverter_Batch" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="MultiChanDataWidthConverter_Batch" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="MultiChanDataWidthConverter_Batch" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="MultiChanDataWidthConverter_Batch" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="MultiChanDataWidthConverter_Batch" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="FlattenMultiChanData" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="FlattenMultiChanData" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="PackMultiChanData" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="PackMultiChanData" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="Mem2Stream" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="Stream2Mem" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="inputBuf"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator" label="">
+<pragma name="RESET">
+<option name="variable" positionalBoolean="4" value="inp"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator" label="">
+<pragma name="DEPENDENCE">
+<option name="variable" value="inputBuf"/>
+<option name="intra" positionalBoolean="type" value=""/>
+<option name="false" positionalBoolean="dependent" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator" label="">
+<pragma name="DEPENDENCE">
+<option name="variable" value="inputBuf"/>
+<option name="inter" positionalBoolean="type" value=""/>
+<option name="false" positionalBoolean="dependent" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator" label="">
+<pragma name="DEPENDENCE">
+<option name="variable" value="current_block_write"/>
+<option name="intra" positionalBoolean="type" value=""/>
+<option name="false" positionalBoolean="dependent" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator_MMV" label="">
+<pragma name="DEPENDENCE">
+<option name="variable" value="inputBuf"/>
+<option name="inter" positionalBoolean="type" value=""/>
+<option name="false" positionalBoolean="dependent" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator_MMV" label="">
+<pragma name="DEPENDENCE">
+<option name="variable" value="inputBuf"/>
+<option name="intra" positionalBoolean="type" value=""/>
+<option name="false" positionalBoolean="dependent" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator_MMV" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="inputBuf"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator_MMV" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="inputBuf"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator_MMV" label="">
+<pragma name="RESET">
+<option name="variable" positionalBoolean="4" value="inp"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator_MMV" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator_MMV" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator_MMV" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator_MMV" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator_MMV" label="">
+<pragma name="DEPENDENCE">
+<option name="variable" value="inputBuf"/>
+<option name="intra" positionalBoolean="type" value=""/>
+<option name="false" positionalBoolean="dependent" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator_MMV" label="">
+<pragma name="DEPENDENCE">
+<option name="variable" value="inputBuf"/>
+<option name="inter" positionalBoolean="type" value=""/>
+<option name="false" positionalBoolean="dependent" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ConvolutionInputGenerator_MMV" label="">
+<pragma name="DEPENDENCE">
+<option name="variable" value="current_block_write"/>
+<option name="intra" positionalBoolean="type" value=""/>
+<option name="false" positionalBoolean="dependent" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="StreamingMaxPool" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="StreamingMaxPool" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="StreamingMaxPool" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="StreamingMaxPool_Precision" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="buf"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="StreamingMaxPool_Precision" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="StreamingMaxPool_Precision" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="StreamingMaxPool_Precision" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="StreamingMaxPool_Precision" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="StreamingMaxPool_Precision_Batch" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="ReLU_Batch" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="ReLU_Batch" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="AccPool_Batch" label="">
+<pragma name="RESOURCE">
+<option name="variable" positionalBoolean="4" value="accumulators"/>
+<option name="core" value="RAM_2P_LUTRAM"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AccPool_Batch" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="AccPool_Batch" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="LabelSelect_Batch" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="toplabels"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="LabelSelect_Batch" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="topval"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="LabelSelect_Batch" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="LabelSelect_Batch" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="LabelSelect_Batch" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="mul" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="mul" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="mul" label="">
+<pragma name="RESOURCE">
+<option name="variable" positionalBoolean="4" value="res"/>
+<option name="core" value="Mul_LUT"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="mul" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="mul" label="">
+<pragma name="RESOURCE">
+<option name="variable" positionalBoolean="4" value="res"/>
+<option name="core" value="DSP48"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="mac" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="mac" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="mac" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="mac" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="mac" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="XnorMul" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator *" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator *" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="Binary" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator *" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator *" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator *" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="Container" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator []" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator []" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator const #10000 &amp;" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="Container" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="Container" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator []" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator const #10000 &amp;" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="Container" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="Container" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="Container" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator const #10000 &amp;" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator []" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator ()" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="Matrix_Vector_Activate_Batch" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="inputBuf"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="0"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="Matrix_Vector_Activate_Batch" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="accu"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="0"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="Matrix_Vector_Activate_Batch" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="Matrix_Vector_Activate_Batch" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="Matrix_Vector_Activate_Batch" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="Matrix_Vector_Activate_Batch" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="Matrix_Vector_Activate_Batch" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="StreamingFCLayer_Batch" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="ConvLayer_Batch" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="ConvLayer_Batch_MMV" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="TileIndex" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator []" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="weights" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="TileIndex" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator []" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="operator []" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="weights" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="init" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="activate" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="ThresholdActivation" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="activate" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="init" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="activate" label="">
+<pragma name="INLINE"/>
+</directive>
+<directive functionLabel="" functionName="activate" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="Thresholding_Batch" label="">
+<pragma name="UNROLL"/>
+</directive>
+<directive functionLabel="" functionName="DoCompute" label="">
+<pragma name="DATAFLOW"/>
+</directive>
+<directive functionLabel="" functionName="DoCompute" label="">
+<pragma name="STREAM">
+<option name="variable" positionalBoolean="4" value="memInStrm"/>
+<option name="depth" value="1024"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="DoCompute" label="">
+<pragma name="STREAM">
+<option name="variable" positionalBoolean="4" value="inter0"/>
+<option name="depth" value="L0_DEPTH"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="DoCompute" label="">
+<pragma name="STREAM">
+<option name="variable" positionalBoolean="4" value="inter1"/>
+<option name="depth" value="L1_DEPTH"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="DoCompute" label="">
+<pragma name="STREAM">
+<option name="variable" positionalBoolean="4" value="inter2"/>
+<option name="depth" value="L2_DEPTH"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="DoCompute" label="">
+<pragma name="STREAM">
+<option name="variable" positionalBoolean="4" value="memOutStrm"/>
+<option name="depth" value="1024"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="doInit"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="targetLayer"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="targetMem"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="targetThresh"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="targetInd"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="val"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="numReps"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="256"/>
+<option name="port" positionalBoolean="4" value="in"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="hostmem"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="in"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="256"/>
+<option name="port" positionalBoolean="4" value="out"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="hostmem"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="out"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="weights0.m_weights"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="threshs0.m_thresholds"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="weights1.m_weights"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="threshs1.m_thresholds"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="weights2.m_weights"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="threshs2.m_thresholds"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="weights3.m_weights"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="BlackBoxJam" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="threshs3.m_thresholds"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

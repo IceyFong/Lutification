@@ -1,0 +1,613 @@
+
+*** Running vivado
+    with args -log procsys_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source procsys_wrapper.tcl -notrace
+
+
+****** Vivado v2016.3 (64-bit)
+  **** SW Build 1682563 on Mon Oct 10 19:07:26 MDT 2016
+  **** IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source procsys_wrapper.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Project 1-454] Reading design checkpoint '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_BlackBoxJam_0_0/procsys_BlackBoxJam_0_0.dcp' for cell 'procsys_i/BlackBoxJam_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_ps7_0/procsys_ps7_0.dcp' for cell 'procsys_i/ps7'
+INFO: [Project 1-454] Reading design checkpoint '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_rst_ps7_100M_0/procsys_rst_ps7_100M_0.dcp' for cell 'procsys_i/rst_ps7_100M'
+INFO: [Project 1-454] Reading design checkpoint '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_auto_pc_0/procsys_auto_pc_0.dcp' for cell 'procsys_i/axi_mem_intercon/s00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_auto_pc_1/procsys_auto_pc_1.dcp' for cell 'procsys_i/ps7_axi_periph/s00_couplers/auto_pc'
+INFO: [Netlist 29-17] Analyzing 3719 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.3
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_ps7_0/procsys_ps7_0.xdc] for cell 'procsys_i/ps7/inst'
+Finished Parsing XDC File [/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_ps7_0/procsys_ps7_0.xdc] for cell 'procsys_i/ps7/inst'
+Parsing XDC File [/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_rst_ps7_100M_0/procsys_rst_ps7_100M_0_board.xdc] for cell 'procsys_i/rst_ps7_100M/U0'
+Finished Parsing XDC File [/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_rst_ps7_100M_0/procsys_rst_ps7_100M_0_board.xdc] for cell 'procsys_i/rst_ps7_100M/U0'
+Parsing XDC File [/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_rst_ps7_100M_0/procsys_rst_ps7_100M_0.xdc] for cell 'procsys_i/rst_ps7_100M/U0'
+Finished Parsing XDC File [/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_rst_ps7_100M_0/procsys_rst_ps7_100M_0.xdc] for cell 'procsys_i/rst_ps7_100M/U0'
+Parsing XDC File [/home/jf2715/BNN-PYNQ/bnn/src/library/script/pynqZ1-Z2/pynqZ1-Z2.xdc]
+Finished Parsing XDC File [/home/jf2715/BNN-PYNQ/bnn/src/library/script/pynqZ1-Z2/pynqZ1-Z2.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_ps7_0/procsys_ps7_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_BlackBoxJam_0_0/procsys_BlackBoxJam_0_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_rst_ps7_100M_0/procsys_rst_ps7_100M_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_auto_pc_0/procsys_auto_pc_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.srcs/sources_1/bd/procsys/ip/procsys_auto_pc_1/procsys_auto_pc_1.dcp'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2307 instances were transformed.
+  RAM16X1S => RAM32X1S (RAMS32): 1280 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 2 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 1 instances
+  RAM32X1S => RAM32X1S (RAMS32): 1024 instances
+
+link_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:32 . Memory (MB): peak = 1592.035 ; gain = 484.270 ; free physical = 151910 ; free virtual = 257738
+Command: opt_design -directive Explore
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.85 . Memory (MB): peak = 1668.070 ; gain = 76.020 ; free physical = 151898 ; free virtual = 257727
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+Implement Debug Cores | Checksum: 1530f34af
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 1ec151b91
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2137.559 ; gain = 0.000 ; free physical = 151471 ; free virtual = 257313
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-10] Eliminated 373 cells.
+Phase 2 Constant propagation | Checksum: 1c2173661
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2137.559 ; gain = 0.000 ; free physical = 151467 ; free virtual = 257309
+
+Phase 3 Sweep
+INFO: [Opt 31-12] Eliminated 5040 unconnected nets.
+INFO: [Opt 31-11] Eliminated 1045 unconnected cells.
+Phase 3 Sweep | Checksum: 16b627a10
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2137.559 ; gain = 0.000 ; free physical = 151467 ; free virtual = 257309
+
+Phase 4 BUFG optimization
+INFO: [Opt 31-12] Eliminated 0 unconnected nets.
+INFO: [Opt 31-11] Eliminated 0 unconnected cells.
+Phase 4 BUFG optimization | Checksum: 179400d75
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2137.559 ; gain = 0.000 ; free physical = 151467 ; free virtual = 257309
+
+Phase 5 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-10] Eliminated 0 cells.
+Phase 5 Constant propagation | Checksum: 179400d75
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2137.559 ; gain = 0.000 ; free physical = 151466 ; free virtual = 257308
+
+Phase 6 Sweep
+INFO: [Opt 31-12] Eliminated 0 unconnected nets.
+INFO: [Opt 31-11] Eliminated 0 unconnected cells.
+Phase 6 Sweep | Checksum: 179400d75
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2137.559 ; gain = 0.000 ; free physical = 151466 ; free virtual = 257308
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2137.559 ; gain = 0.000 ; free physical = 151466 ; free virtual = 257308
+Ending Logic Optimization Task | Checksum: 179400d75
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2137.559 ; gain = 0.000 ; free physical = 151466 ; free virtual = 257308
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 214 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 4 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 10 Total Ports: 428
+Ending PowerOpt Patch Enables Task | Checksum: 15961cd5b
+
+Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.23 . Memory (MB): peak = 2750.848 ; gain = 0.000 ; free physical = 150988 ; free virtual = 256830
+Ending Power Optimization Task | Checksum: 15961cd5b
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:18 . Memory (MB): peak = 2750.848 ; gain = 613.289 ; free physical = 150988 ; free virtual = 256830
+INFO: [Common 17-83] Releasing license: Implementation
+42 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:01:11 ; elapsed = 00:00:48 . Memory (MB): peak = 2750.848 ; gain = 1158.797 ; free physical = 150988 ; free virtual = 256830
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.49 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2750.848 ; gain = 0.000 ; free physical = 150983 ; free virtual = 256831
+INFO: [Common 17-1381] The checkpoint '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.runs/impl_1/procsys_wrapper_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2750.848 ; gain = 0.000 ; free physical = 150981 ; free virtual = 256831
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.runs/impl_1/procsys_wrapper_drc_opted.rpt.
+report_drc: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 2750.848 ; gain = 0.000 ; free physical = 150979 ; free virtual = 256829
+INFO: [Chipscope 16-241] No debug cores found in the current design.
+Before running the implement_debug_core command, either use the Set Up Debug wizard (GUI mode)
+or use the create_debug_core and connect_debug_core Tcl commands to insert debug cores into the design.
+Command: place_design -directive ExtraTimingOpt
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC 23-20] Rule violation (CHECK-3) Report rule limit reached - REQP-1839 rule limit reached: 20 violations have been found.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[4] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[4] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[4] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[4] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[4] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[5] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[5] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[5] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[5] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[5] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[6] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[6] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[6] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[6] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[6] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[7] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[7] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[7] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[7] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[7] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 21 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 46-5] The placer was invoked with the 'ExtraTimingOpt' directive.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+Netlist sorting complete. Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.19 . Memory (MB): peak = 2750.848 ; gain = 0.000 ; free physical = 150981 ; free virtual = 256831
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2750.848 ; gain = 0.000 ; free physical = 150972 ; free virtual = 256822
+
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 77c91779
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:18 . Memory (MB): peak = 2750.848 ; gain = 0.000 ; free physical = 150969 ; free virtual = 256819
+
+Phase 1.2 Build Placer Netlist Model
+Phase 1.2 Build Placer Netlist Model | Checksum: 10f433d71
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:28 . Memory (MB): peak = 2750.848 ; gain = 0.000 ; free physical = 150964 ; free virtual = 256815
+
+Phase 1.3 Constrain Clocks/Macros
+Phase 1.3 Constrain Clocks/Macros | Checksum: 10f433d71
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:28 . Memory (MB): peak = 2750.848 ; gain = 0.000 ; free physical = 150964 ; free virtual = 256815
+Phase 1 Placer Initialization | Checksum: 10f433d71
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:28 . Memory (MB): peak = 2750.848 ; gain = 0.000 ; free physical = 150964 ; free virtual = 256815
+
+Phase 2 Global Placement
+Phase 2 Global Placement | Checksum: 1c36a1b95
+
+Time (s): cpu = 00:02:29 ; elapsed = 00:01:14 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150960 ; free virtual = 256811
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1c36a1b95
+
+Time (s): cpu = 00:02:31 ; elapsed = 00:01:14 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150960 ; free virtual = 256810
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: b1e82860
+
+Time (s): cpu = 00:02:57 ; elapsed = 00:01:27 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150958 ; free virtual = 256808
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 112750508
+
+Time (s): cpu = 00:02:59 ; elapsed = 00:01:27 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150957 ; free virtual = 256807
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 146f9c331
+
+Time (s): cpu = 00:02:59 ; elapsed = 00:01:27 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150957 ; free virtual = 256807
+
+Phase 3.5 Timing Path Optimizer
+Phase 3.5 Timing Path Optimizer | Checksum: 7a999b76
+
+Time (s): cpu = 00:03:07 ; elapsed = 00:01:31 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150957 ; free virtual = 256807
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 16916fb03
+
+Time (s): cpu = 00:03:23 ; elapsed = 00:01:46 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150958 ; free virtual = 256809
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 159e69ff1
+
+Time (s): cpu = 00:03:25 ; elapsed = 00:01:48 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150958 ; free virtual = 256809
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 159e69ff1
+
+Time (s): cpu = 00:03:26 ; elapsed = 00:01:48 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150959 ; free virtual = 256810
+Phase 3 Detail Placement | Checksum: 159e69ff1
+
+Time (s): cpu = 00:03:27 ; elapsed = 00:01:49 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150959 ; free virtual = 256809
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=1.632. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 249cda849
+
+Time (s): cpu = 00:03:57 ; elapsed = 00:01:58 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150950 ; free virtual = 256801
+Phase 4.1 Post Commit Optimization | Checksum: 249cda849
+
+Time (s): cpu = 00:03:58 ; elapsed = 00:01:59 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150950 ; free virtual = 256800
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 249cda849
+
+Time (s): cpu = 00:03:59 ; elapsed = 00:01:59 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150949 ; free virtual = 256799
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 249cda849
+
+Time (s): cpu = 00:03:59 ; elapsed = 00:02:00 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150949 ; free virtual = 256799
+
+Phase 4.4 Final Placement Cleanup
+Phase 4.4 Final Placement Cleanup | Checksum: 27923abe0
+
+Time (s): cpu = 00:04:00 ; elapsed = 00:02:00 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150949 ; free virtual = 256799
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 27923abe0
+
+Time (s): cpu = 00:04:00 ; elapsed = 00:02:01 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150949 ; free virtual = 256799
+Ending Placer Task | Checksum: 17e16e49f
+
+Time (s): cpu = 00:04:04 ; elapsed = 00:02:01 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150948 ; free virtual = 256798
+INFO: [Common 17-83] Releasing license: Implementation
+61 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:04:14 ; elapsed = 00:02:08 . Memory (MB): peak = 2765.988 ; gain = 15.141 ; free physical = 150948 ; free virtual = 256798
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:12 ; elapsed = 00:00:04 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150881 ; free virtual = 256797
+INFO: [Common 17-1381] The checkpoint '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.runs/impl_1/procsys_wrapper_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150934 ; free virtual = 256797
+report_io: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.61 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150932 ; free virtual = 256795
+report_utilization: Time (s): cpu = 00:00:00.62 ; elapsed = 00:00:01 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150931 ; free virtual = 256795
+report_control_sets: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.67 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150931 ; free virtual = 256794
+Command: phys_opt_design -directive AggressiveExplore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Vivado_Tcl 4-137] Directive used for phys_opt_design is: AggressiveExplore
+Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150931 ; free virtual = 256794
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+Phase 1 Physical Synthesis Initialization | Checksum: 17af89df1
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:07 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150932 ; free virtual = 256795
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.500 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+Ending Physical Synthesis Task | Checksum: 1e5511cd6
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:09 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150932 ; free virtual = 256796
+INFO: [Common 17-83] Releasing license: Implementation
+68 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:10 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150932 ; free virtual = 256795
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:12 ; elapsed = 00:00:05 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150870 ; free virtual = 256795
+INFO: [Common 17-1381] The checkpoint '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.runs/impl_1/procsys_wrapper_physopt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150917 ; free virtual = 256792
+Command: route_design -directive Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-270] Using Router directive 'Explore'.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: 980945c3 ConstDB: 0 ShapeSum: 6dcd61f7 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 1007f3bcd
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:16 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150918 ; free virtual = 256793
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 1007f3bcd
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:18 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150913 ; free virtual = 256788
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 1007f3bcd
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:18 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150912 ; free virtual = 256787
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 1007f3bcd
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:18 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150912 ; free virtual = 256787
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: ec3128ff
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:31 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150910 ; free virtual = 256785
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.877  | TNS=0.000  | WHS=-0.358 | THS=-395.353|
+
+Phase 2 Router Initialization | Checksum: 7159ab98
+
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:36 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150911 ; free virtual = 256785
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 21237e367
+
+Time (s): cpu = 00:01:53 ; elapsed = 00:00:44 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150910 ; free virtual = 256785
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 4723
+ Number of Nodes with overlaps = 161
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 0
+
+Phase 4.1.1 Update Timing
+Phase 4.1.1 Update Timing | Checksum: 12aa0e0e2
+
+Time (s): cpu = 00:03:02 ; elapsed = 00:00:59 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150908 ; free virtual = 256783
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.204  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 20059e6ed
+
+Time (s): cpu = 00:03:03 ; elapsed = 00:01:00 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150906 ; free virtual = 256781
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+
+Phase 4.2.1 Update Timing
+Phase 4.2.1 Update Timing | Checksum: 92ff271c
+
+Time (s): cpu = 00:03:05 ; elapsed = 00:01:01 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150909 ; free virtual = 256783
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.204  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 20a15f0a2
+
+Time (s): cpu = 00:03:06 ; elapsed = 00:01:02 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150907 ; free virtual = 256782
+
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 0
+
+Phase 4.3.1 Update Timing
+Phase 4.3.1 Update Timing | Checksum: 11cde8a1d
+
+Time (s): cpu = 00:03:08 ; elapsed = 00:01:03 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150907 ; free virtual = 256782
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.204  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.3 Global Iteration 2 | Checksum: 8f64c543
+
+Time (s): cpu = 00:03:09 ; elapsed = 00:01:03 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150907 ; free virtual = 256782
+Phase 4 Rip-up And Reroute | Checksum: 8f64c543
+
+Time (s): cpu = 00:03:09 ; elapsed = 00:01:03 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150907 ; free virtual = 256782
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 8f64c543
+
+Time (s): cpu = 00:03:10 ; elapsed = 00:01:03 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150906 ; free virtual = 256781
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 8f64c543
+
+Time (s): cpu = 00:03:10 ; elapsed = 00:01:04 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150906 ; free virtual = 256781
+Phase 5 Delay and Skew Optimization | Checksum: 8f64c543
+
+Time (s): cpu = 00:03:10 ; elapsed = 00:01:04 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150906 ; free virtual = 256781
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 15dc8205e
+
+Time (s): cpu = 00:03:22 ; elapsed = 00:01:07 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150908 ; free virtual = 256783
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.243  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 14722cbb6
+
+Time (s): cpu = 00:03:22 ; elapsed = 00:01:07 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150908 ; free virtual = 256783
+Phase 6 Post Hold Fix | Checksum: 14722cbb6
+
+Time (s): cpu = 00:03:23 ; elapsed = 00:01:07 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150908 ; free virtual = 256783
+
+Phase 7 Timing Verification
+
+Phase 7.1 Update Timing
+Phase 7.1 Update Timing | Checksum: a08c24b3
+
+Time (s): cpu = 00:03:33 ; elapsed = 00:01:10 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150907 ; free virtual = 256782
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.243  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 7 Timing Verification | Checksum: a08c24b3
+
+Time (s): cpu = 00:03:33 ; elapsed = 00:01:10 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150907 ; free virtual = 256782
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 13.4741 %
+  Global Horizontal Routing Utilization  = 15.3822 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 8 Route finalize | Checksum: a08c24b3
+
+Time (s): cpu = 00:03:34 ; elapsed = 00:01:10 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150908 ; free virtual = 256782
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: a08c24b3
+
+Time (s): cpu = 00:03:35 ; elapsed = 00:01:10 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150908 ; free virtual = 256782
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 65128213
+
+Time (s): cpu = 00:03:38 ; elapsed = 00:01:13 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150908 ; free virtual = 256783
+
+Phase 11 Post Router Timing
+INFO: [Route 35-20] Post Routing Timing Summary | WNS=0.245  | TNS=0.000  | WHS=0.011  | THS=0.000  |
+
+INFO: [Route 35-61] The design met the timing requirement.
+Phase 11 Post Router Timing | Checksum: 65bd3465
+
+Time (s): cpu = 00:04:11 ; elapsed = 00:01:23 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150912 ; free virtual = 256786
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:04:12 ; elapsed = 00:01:23 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150911 ; free virtual = 256786
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+85 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:04:21 ; elapsed = 00:01:29 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150911 ; free virtual = 256786
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:13 ; elapsed = 00:00:05 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150831 ; free virtual = 256786
+INFO: [Common 17-1381] The checkpoint '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.runs/impl_1/procsys_wrapper_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150894 ; free virtual = 256785
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.runs/impl_1/procsys_wrapper_drc_routed.rpt.
+report_drc: Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150894 ; free virtual = 256785
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file /home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.runs/impl_1/procsys_wrapper_methodology_drc_routed.rpt.
+report_methodology: Time (s): cpu = 00:00:47 ; elapsed = 00:00:17 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150885 ; free virtual = 256776
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+report_timing_summary: Time (s): cpu = 00:00:16 ; elapsed = 00:00:06 . Memory (MB): peak = 2765.988 ; gain = 0.000 ; free physical = 150855 ; free virtual = 256746
+Command: report_power -file procsys_wrapper_power_routed.rpt -pb procsys_wrapper_power_summary_routed.pb -rpx procsys_wrapper_power_routed.rpx
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+95 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:26 ; elapsed = 00:00:11 . Memory (MB): peak = 2866.910 ; gain = 100.922 ; free physical = 150755 ; free virtual = 256659
+Command: phys_opt_design -directive AggressiveExplore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Vivado_Tcl 4-241] Physical synthesis in post route mode ( 100.0% nets are fully routed)
+INFO: [Vivado_Tcl 4-137] Directive used for phys_opt_design is: AggressiveExplore
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+101 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:12 ; elapsed = 00:00:05 . Memory (MB): peak = 2866.910 ; gain = 0.000 ; free physical = 150672 ; free virtual = 256656
+INFO: [Common 17-1381] The checkpoint '/home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/lfcW1A1-pynqZ1-Z2.runs/impl_1/procsys_wrapper_postroute_physopt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 2866.910 ; gain = 0.000 ; free physical = 150735 ; free virtual = 256656
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+Command: write_bitstream -force -no_partial_bitfile procsys_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC 23-20] Rule violation (CHECK-3) Report rule limit reached - REQP-1839 rule limit reached: 20 violations have been found.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[4] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[4] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[4] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[4] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[4] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[5] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[5] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[5] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[5] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[5] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[6] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[6] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[6] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[6] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[6] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[7] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[7] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[7] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[7] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (REQP-1839) RAMB36 async control check - The RAMB36E1 procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg has an input control pin procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/mem_reg/WEBWE[7] (net: procsys_i/BlackBoxJam_0/inst/BlackBoxJam_hostmem_m_axi_U/bus_read/buff_rdata/m_axi_hostmem_RVALID) which is driven by a register (procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC 23-20] Rule violation (RTSTAT-10) No routable loads - 21 net(s) have no routable loads. The problem bus(es) and/or net(s) are procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i, procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i, procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i, procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[1], procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[1], procsys_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[1] (the first 15 of 21 listed).
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 22 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./procsys_wrapper.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-118] WebTalk data collection is enabled (User setting is ON. Install Setting is ON.).
+INFO: [Common 17-83] Releasing license: Implementation
+111 Infos, 43 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:58 ; elapsed = 00:00:54 . Memory (MB): peak = 3142.547 ; gain = 275.637 ; free physical = 150386 ; free virtual = 256317
+INFO: [Common 17-206] Exiting Vivado at Fri May  8 13:03:33 2020...

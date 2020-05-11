@@ -1,0 +1,301 @@
+
+
+================================================================
+== Vivado HLS Report for 'Mem2Stream_1'
+================================================================
+* Date:           Thu May  7 18:21:54 2020
+
+* Version:        2016.3 (Build 1682563 on Mon Oct 10 19:41:59 MDT 2016)
+* Project:        lfcW1A1-pynqZ1-Z2
+* Solution:       sol1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|      4.38|        0.62|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  218|  218|  218|  218|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  209|  209|         3|          1|          1|   208|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 12
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 3, States = { 9 10 11 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	12  / (tmp)
+	10  / (!tmp)
+10 --> 
+	11  / true
+11 --> 
+	9  / true
+12 --> 
+* FSM state operations: 
+
+ <State 1>: 3.40ns
+ST_1: tmp_6_read (5)  [1/1] 0.00ns
+:0  %tmp_6_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %tmp_6)
+
+ST_1: in_V1_read (6)  [1/1] 0.00ns
+:1  %in_V1_read = call i61 @_ssdm_op_Read.ap_auto.i61(i61 %in_V1)
+
+ST_1: tmp_9_cast (9)  [1/1] 0.00ns
+:4  %tmp_9_cast = zext i32 %tmp_6_read to i62
+
+ST_1: in_V1_cast8 (10)  [1/1] 0.00ns
+:5  %in_V1_cast8 = zext i61 %in_V1_read to i62
+
+ST_1: sum1 (11)  [1/1] 3.40ns
+:6  %sum1 = add i62 %in_V1_cast8, %tmp_9_cast
+
+
+ <State 2>: 4.38ns
+ST_2: sum1_cast (12)  [1/1] 0.00ns
+:7  %sum1_cast = zext i62 %sum1 to i64
+
+ST_2: in_V_addr (13)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142
+:8  %in_V_addr = getelementptr i64* %in_V, i64 %sum1_cast
+
+ST_2: in_V_addr_rd_req (14)  [7/7] 4.38ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142
+:9  %in_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %in_V_addr, i32 208)
+
+
+ <State 3>: 4.38ns
+ST_3: in_V_addr_rd_req (14)  [6/7] 4.38ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142
+:9  %in_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %in_V_addr, i32 208)
+
+
+ <State 4>: 4.38ns
+ST_4: in_V_addr_rd_req (14)  [5/7] 4.38ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142
+:9  %in_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %in_V_addr, i32 208)
+
+
+ <State 5>: 4.38ns
+ST_5: in_V_addr_rd_req (14)  [4/7] 4.38ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142
+:9  %in_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %in_V_addr, i32 208)
+
+
+ <State 6>: 4.38ns
+ST_6: in_V_addr_rd_req (14)  [3/7] 4.38ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142
+:9  %in_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %in_V_addr, i32 208)
+
+
+ <State 7>: 4.38ns
+ST_7: in_V_addr_rd_req (14)  [2/7] 4.38ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142
+:9  %in_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %in_V_addr, i32 208)
+
+
+ <State 8>: 4.38ns
+ST_8: StgValue_26 (7)  [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecInterface(i64* %out_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_8: StgValue_27 (8)  [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecInterface(i64* %in_V, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str13, i32 0, i32 256, [8 x i8]* @p_str17, [6 x i8]* @p_str18, [1 x i8]* @p_str13, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str13, [1 x i8]* @p_str13)
+
+ST_8: in_V_addr_rd_req (14)  [1/7] 4.38ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142
+:9  %in_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %in_V_addr, i32 208)
+
+ST_8: StgValue_29 (15)  [1/1] 1.57ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:140
+:10  br label %1
+
+
+ <State 9>: 2.00ns
+ST_9: i (17)  [1/1] 0.00ns
+:0  %i = phi i8 [ 0, %0 ], [ %i_2, %2 ]
+
+ST_9: tmp (18)  [1/1] 2.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:140
+:1  %tmp = icmp eq i8 %i, -48
+
+ST_9: i_2 (19)  [1/1] 1.72ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:140
+:2  %i_2 = add i8 %i, 1
+
+ST_9: StgValue_33 (20)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:140
+:3  br i1 %tmp, label %3, label %2
+
+
+ <State 10>: 4.38ns
+ST_10: e_V (25)  [1/1] 4.38ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142
+:3  %e_V = call i64 @_ssdm_op_Read.m_axi.i64P(i64* %in_V_addr)
+
+
+ <State 11>: 1.00ns
+ST_11: empty (22)  [1/1] 0.00ns
+:0  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 208, i64 208, i64 208)
+
+ST_11: tmp_5 (23)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:140
+:1  %tmp_5 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str52)
+
+ST_11: StgValue_37 (24)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:141
+:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str13) nounwind
+
+ST_11: StgValue_38 (26)  [1/1] 1.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:143
+:4  call void @_ssdm_op_Write.ap_fifo.volatile.i64P(i64* %out_V_V, i64 %e_V)
+
+ST_11: empty_465 (27)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:144
+:5  %empty_465 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str52, i32 %tmp_5)
+
+ST_11: StgValue_40 (28)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:140
+:6  br label %1
+
+
+ <State 12>: 0.00ns
+ST_12: StgValue_41 (30)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:145
+:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0.625ns.
+
+ <State 1>: 3.4ns
+The critical path consists of the following:
+	wire read on port 'tmp_6' [5]  (0 ns)
+	'add' operation ('sum1') [11]  (3.4 ns)
+
+ <State 2>: 4.38ns
+The critical path consists of the following:
+	'getelementptr' operation ('in_V_addr', /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142) [13]  (0 ns)
+	bus request on port 'in_V' (/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142) [14]  (4.38 ns)
+
+ <State 3>: 4.38ns
+The critical path consists of the following:
+	bus request on port 'in_V' (/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142) [14]  (4.38 ns)
+
+ <State 4>: 4.38ns
+The critical path consists of the following:
+	bus request on port 'in_V' (/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142) [14]  (4.38 ns)
+
+ <State 5>: 4.38ns
+The critical path consists of the following:
+	bus request on port 'in_V' (/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142) [14]  (4.38 ns)
+
+ <State 6>: 4.38ns
+The critical path consists of the following:
+	bus request on port 'in_V' (/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142) [14]  (4.38 ns)
+
+ <State 7>: 4.38ns
+The critical path consists of the following:
+	bus request on port 'in_V' (/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142) [14]  (4.38 ns)
+
+ <State 8>: 4.38ns
+The critical path consists of the following:
+	bus request on port 'in_V' (/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142) [14]  (4.38 ns)
+
+ <State 9>: 2ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:140) [17]  (0 ns)
+	'icmp' operation ('tmp', /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:140) [18]  (2 ns)
+
+ <State 10>: 4.38ns
+The critical path consists of the following:
+	bus read on port 'in_V' (/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:142) [25]  (4.38 ns)
+
+ <State 11>: 1ns
+The critical path consists of the following:
+	fifo write on port 'out_V_V' (/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/dma.h:143) [26]  (1 ns)
+
+ <State 12>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

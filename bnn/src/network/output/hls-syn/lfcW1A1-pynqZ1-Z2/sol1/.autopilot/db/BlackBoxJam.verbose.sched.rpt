@@ -1,0 +1,223 @@
+
+
+================================================================
+== Vivado HLS Report for 'BlackBoxJam'
+================================================================
+* Date:           Thu May  7 18:30:50 2020
+
+* Version:        2016.3 (Build 1682563 on Mon Oct 10 19:41:59 MDT 2016)
+* Project:        lfcW1A1-pynqZ1-Z2
+* Solution:       sol1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|     11.75|        0.62|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 2
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+* FSM state operations: 
+
+ <State 1>: 3.71ns
+ST_1: numReps_read (299)  [1/1] 1.00ns
+:0  %numReps_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %numReps)
+
+ST_1: val_V_read (300)  [1/1] 1.00ns
+:1  %val_V_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %val_V)
+
+ST_1: targetInd_read (301)  [1/1] 1.00ns
+:2  %targetInd_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %targetInd)
+
+ST_1: targetMem_read (302)  [1/1] 1.00ns
+:3  %targetMem_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %targetMem)
+
+ST_1: targetLayer_read (303)  [1/1] 1.00ns
+:4  %targetLayer_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %targetLayer)
+
+ST_1: doInit_read (304)  [1/1] 1.00ns
+:5  %doInit_read = call i1 @_ssdm_op_Read.s_axilite.i1(i1 %doInit)
+
+ST_1: out_V_read (305)  [1/1] 1.00ns
+:6  %out_V_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %out_V)
+
+ST_1: in_V_read (306)  [1/1] 1.00ns
+:7  %in_V_read = call i64 @_ssdm_op_Read.s_axilite.i64(i64 %in_V)
+
+ST_1: out_V3 (307)  [1/1] 0.00ns
+:8  %out_V3 = call i61 @_ssdm_op_PartSelect.i61.i64.i32.i32(i64 %out_V_read, i32 3, i32 63)
+
+ST_1: in_V1 (308)  [1/1] 0.00ns
+:9  %in_V1 = call i61 @_ssdm_op_PartSelect.i61.i64.i32.i32(i64 %in_V_read, i32 3, i32 63)
+
+ST_1: StgValue_13 (309)  [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_SpecBitsMap(i64* %hostmem), !map !232
+
+ST_1: StgValue_14 (310)  [1/1] 0.00ns
+:11  call void (...)* @_ssdm_op_SpecBitsMap(i1 %doInit), !map !239
+
+ST_1: StgValue_15 (311)  [1/1] 0.00ns
+:12  call void (...)* @_ssdm_op_SpecBitsMap(i32 %targetLayer), !map !245
+
+ST_1: StgValue_16 (312)  [1/1] 0.00ns
+:13  call void (...)* @_ssdm_op_SpecBitsMap(i32 %targetMem), !map !249
+
+ST_1: StgValue_17 (313)  [1/1] 0.00ns
+:14  call void (...)* @_ssdm_op_SpecBitsMap(i32 %targetInd), !map !253
+
+ST_1: StgValue_18 (314)  [1/1] 0.00ns
+:15  call void (...)* @_ssdm_op_SpecBitsMap(i32 %targetThresh), !map !257
+
+ST_1: StgValue_19 (315)  [1/1] 0.00ns
+:16  call void (...)* @_ssdm_op_SpecBitsMap(i64 %val_V), !map !261
+
+ST_1: StgValue_20 (316)  [1/1] 0.00ns
+:17  call void (...)* @_ssdm_op_SpecBitsMap(i32 %numReps), !map !265
+
+ST_1: StgValue_21 (317)  [1/1] 0.00ns
+:18  call void (...)* @_ssdm_op_SpecTopModule([12 x i8]* @BlackBoxJam_str) nounwind
+
+ST_1: StgValue_22 (318)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:150
+:19  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str13, i32 0, i32 0, [8 x i8]* @p_str15, [1 x i8]* @p_str13, [1 x i8]* @p_str13, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str13, [1 x i8]* @p_str13) nounwind
+
+ST_1: StgValue_23 (319)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:151
+:20  call void (...)* @_ssdm_op_SpecInterface(i1 %doInit, [10 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str13, i32 0, i32 0, [8 x i8]* @p_str15, [1 x i8]* @p_str13, [1 x i8]* @p_str13, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str13, [1 x i8]* @p_str13) nounwind
+
+ST_1: StgValue_24 (320)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:152
+:21  call void (...)* @_ssdm_op_SpecInterface(i32 %targetLayer, [10 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str13, i32 0, i32 0, [8 x i8]* @p_str15, [1 x i8]* @p_str13, [1 x i8]* @p_str13, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str13, [1 x i8]* @p_str13) nounwind
+
+ST_1: StgValue_25 (321)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:153
+:22  call void (...)* @_ssdm_op_SpecInterface(i32 %targetMem, [10 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str13, i32 0, i32 0, [8 x i8]* @p_str15, [1 x i8]* @p_str13, [1 x i8]* @p_str13, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str13, [1 x i8]* @p_str13) nounwind
+
+ST_1: StgValue_26 (322)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:154
+:23  call void (...)* @_ssdm_op_SpecInterface(i32 %targetThresh, [10 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str13, i32 0, i32 0, [8 x i8]* @p_str15, [1 x i8]* @p_str13, [1 x i8]* @p_str13, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str13, [1 x i8]* @p_str13) nounwind
+
+ST_1: StgValue_27 (323)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:155
+:24  call void (...)* @_ssdm_op_SpecInterface(i32 %targetInd, [10 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str13, i32 0, i32 0, [8 x i8]* @p_str15, [1 x i8]* @p_str13, [1 x i8]* @p_str13, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str13, [1 x i8]* @p_str13) nounwind
+
+ST_1: StgValue_28 (324)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:156
+:25  call void (...)* @_ssdm_op_SpecInterface(i64 %val_V, [10 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str13, i32 0, i32 0, [8 x i8]* @p_str15, [1 x i8]* @p_str13, [1 x i8]* @p_str13, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str13, [1 x i8]* @p_str13) nounwind
+
+ST_1: StgValue_29 (325)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:157
+:26  call void (...)* @_ssdm_op_SpecInterface(i32 %numReps, [10 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str13, i32 0, i32 0, [8 x i8]* @p_str15, [1 x i8]* @p_str13, [1 x i8]* @p_str13, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str13, [1 x i8]* @p_str13) nounwind
+
+ST_1: StgValue_30 (326)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:159
+:27  call void (...)* @_ssdm_op_SpecInterface(i64* %hostmem, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str13, i32 0, i32 256, [8 x i8]* @p_str17, [6 x i8]* @p_str18, [1 x i8]* @p_str13, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str13, [1 x i8]* @p_str13) nounwind
+
+ST_1: StgValue_31 (327)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:160
+:28  call void (...)* @_ssdm_op_SpecInterface(i64 %in_V, [10 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str13, i32 0, i32 0, [8 x i8]* @p_str15, [1 x i8]* @p_str13, [1 x i8]* @p_str13, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str13, [1 x i8]* @p_str13) nounwind
+
+ST_1: StgValue_32 (328)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:162
+:29  call void (...)* @_ssdm_op_SpecInterface(i64 %out_V, [10 x i8]* @p_str14, i32 0, i32 0, [1 x i8]* @p_str13, i32 0, i32 0, [8 x i8]* @p_str15, [1 x i8]* @p_str13, [1 x i8]* @p_str13, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str13, [1 x i8]* @p_str13) nounwind
+
+ST_1: StgValue_33 (329)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:174
+:30  br i1 %doInit_read, label %1, label %2
+
+ST_1: StgValue_34 (331)  [2/2] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:177
+:0  call fastcc void @DoCompute(i64* %hostmem, i61 %in_V1, i61 %out_V3, i32 %numReps_read)
+
+ST_1: StgValue_35 (334)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:175
+:0  call fastcc void @DoMemInit(i32 %targetLayer_read, i32 %targetMem_read, i32 %targetInd_read, i64 %val_V_read)
+
+ST_1: StgValue_36 (335)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:176
+:1  br label %3
+
+
+ <State 2>: 0.00ns
+ST_2: StgValue_37 (331)  [1/2] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:177
+:0  call fastcc void @DoCompute(i64* %hostmem, i61 %in_V1, i61 %out_V3, i32 %numReps_read)
+
+ST_2: StgValue_38 (332)  [1/1] 0.00ns
+:1  br label %3
+
+ST_2: StgValue_39 (337)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:179
+:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0.625ns.
+
+ <State 1>: 3.71ns
+The critical path consists of the following:
+	s_axi read on port 'val_V' [300]  (1 ns)
+	'call' operation (/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:175) to 'DoMemInit' [334]  (2.71 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

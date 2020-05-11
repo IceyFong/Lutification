@@ -1,0 +1,3125 @@
+
+
+================================================================
+== Vivado HLS Report for 'DoMemInit'
+================================================================
+* Date:           Thu May  7 18:30:43 2020
+
+* Version:        2016.3 (Build 1682563 on Mon Oct 10 19:41:59 MDT 2016)
+* Project:        lfcW1A1-pynqZ1-Z2
+* Solution:       sol1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|      2.71|        0.62|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    0|    0|    0|    0|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 0
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 1
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+* FSM state operations: 
+
+ <State 1>: 2.71ns
+ST_1: val_V_read (293)  [1/1] 0.00ns
+:0  %val_V_read = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %val_V)
+
+ST_1: targetInd_read (294)  [1/1] 0.00ns
+:1  %targetInd_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %targetInd)
+
+ST_1: targetMem_read (295)  [1/1] 0.00ns
+:2  %targetMem_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %targetMem)
+
+ST_1: targetLayer_read (296)  [1/1] 0.00ns
+:3  %targetLayer_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %targetLayer)
+
+ST_1: StgValue_6 (297)  [1/1] 1.91ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:73
+:4  switch i32 %targetLayer_read, label %._crit_edge [
+    i32 0, label %1
+    i32 1, label %3
+    i32 2, label %5
+    i32 3, label %7
+    i32 4, label %9
+    i32 5, label %11
+    i32 6, label %13
+    i32 7, label %15
+  ]
+
+ST_1: tmp_6 (299)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:0  %tmp_6 = zext i32 %targetInd_read to i64
+
+ST_1: tmp_8414 (300)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:1  %tmp_8414 = trunc i64 %val_V_read to i16
+
+ST_1: tmp_8415 (301)  [1/1] 0.00ns
+:2  %tmp_8415 = trunc i32 %targetMem_read to i4
+
+ST_1: threshs3_m_threshold (302)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:3  %threshs3_m_threshold = getelementptr [4 x i16]* @threshs3_m_threshold_15, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_32 (303)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:4  %threshs3_m_threshold_32 = getelementptr [4 x i16]* @threshs3_m_threshold_14, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_33 (304)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:5  %threshs3_m_threshold_33 = getelementptr [4 x i16]* @threshs3_m_threshold_7, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_34 (305)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:6  %threshs3_m_threshold_34 = getelementptr [4 x i16]* @threshs3_m_threshold_6, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_35 (306)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:7  %threshs3_m_threshold_35 = getelementptr [4 x i16]* @threshs3_m_threshold_5, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_36 (307)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:8  %threshs3_m_threshold_36 = getelementptr [4 x i16]* @threshs3_m_threshold_4, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_37 (308)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:9  %threshs3_m_threshold_37 = getelementptr [4 x i16]* @threshs3_m_threshold_3, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_38 (309)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:10  %threshs3_m_threshold_38 = getelementptr [4 x i16]* @threshs3_m_threshold_2, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_39 (310)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:11  %threshs3_m_threshold_39 = getelementptr [4 x i16]* @threshs3_m_threshold_1, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_40 (311)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:12  %threshs3_m_threshold_40 = getelementptr [4 x i16]* @threshs3_m_threshold, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_41 (312)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:13  %threshs3_m_threshold_41 = getelementptr [4 x i16]* @threshs3_m_threshold_13, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_42 (313)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:14  %threshs3_m_threshold_42 = getelementptr [4 x i16]* @threshs3_m_threshold_12, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_43 (314)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:15  %threshs3_m_threshold_43 = getelementptr [4 x i16]* @threshs3_m_threshold_11, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_44 (315)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:16  %threshs3_m_threshold_44 = getelementptr [4 x i16]* @threshs3_m_threshold_10, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_45 (316)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:17  %threshs3_m_threshold_45 = getelementptr [4 x i16]* @threshs3_m_threshold_9, i64 0, i64 %tmp_6
+
+ST_1: threshs3_m_threshold_46 (317)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:18  %threshs3_m_threshold_46 = getelementptr [4 x i16]* @threshs3_m_threshold_8, i64 0, i64 %tmp_6
+
+ST_1: StgValue_26 (318)  [1/1] 1.94ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+:19  switch i4 %tmp_8415, label %branch287 [
+    i4 0, label %branch272
+    i4 1, label %branch273
+    i4 2, label %branch274
+    i4 3, label %branch275
+    i4 4, label %branch276
+    i4 5, label %branch277
+    i4 6, label %branch278
+    i4 7, label %branch279
+    i4 -8, label %branch280
+    i4 -7, label %branch281
+    i4 -6, label %branch282
+    i4 -5, label %branch283
+    i4 -4, label %branch284
+    i4 -3, label %branch285
+    i4 -2, label %branch286
+  ]
+
+ST_1: StgValue_27 (320)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch286:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_45, align 2
+
+ST_1: StgValue_28 (321)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch286:1  br label %16
+
+ST_1: StgValue_29 (323)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch285:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_44, align 2
+
+ST_1: StgValue_30 (324)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch285:1  br label %16
+
+ST_1: StgValue_31 (326)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch284:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_43, align 2
+
+ST_1: StgValue_32 (327)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch284:1  br label %16
+
+ST_1: StgValue_33 (329)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch283:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_42, align 2
+
+ST_1: StgValue_34 (330)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch283:1  br label %16
+
+ST_1: StgValue_35 (332)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch282:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_41, align 2
+
+ST_1: StgValue_36 (333)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch282:1  br label %16
+
+ST_1: StgValue_37 (335)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch281:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_40, align 2
+
+ST_1: StgValue_38 (336)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch281:1  br label %16
+
+ST_1: StgValue_39 (338)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch280:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_39, align 2
+
+ST_1: StgValue_40 (339)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch280:1  br label %16
+
+ST_1: StgValue_41 (341)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch279:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_38, align 2
+
+ST_1: StgValue_42 (342)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch279:1  br label %16
+
+ST_1: StgValue_43 (344)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch278:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_37, align 2
+
+ST_1: StgValue_44 (345)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch278:1  br label %16
+
+ST_1: StgValue_45 (347)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch277:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_36, align 2
+
+ST_1: StgValue_46 (348)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch277:1  br label %16
+
+ST_1: StgValue_47 (350)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch276:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_35, align 2
+
+ST_1: StgValue_48 (351)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch276:1  br label %16
+
+ST_1: StgValue_49 (353)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch275:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_34, align 2
+
+ST_1: StgValue_50 (354)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch275:1  br label %16
+
+ST_1: StgValue_51 (356)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch274:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_33, align 2
+
+ST_1: StgValue_52 (357)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch274:1  br label %16
+
+ST_1: StgValue_53 (359)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch273:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_32, align 2
+
+ST_1: StgValue_54 (360)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch273:1  br label %16
+
+ST_1: StgValue_55 (362)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch272:0  store i16 %tmp_8414, i16* %threshs3_m_threshold, align 2
+
+ST_1: StgValue_56 (363)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch272:1  br label %16
+
+ST_1: StgValue_57 (365)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch287:0  store i16 %tmp_8414, i16* %threshs3_m_threshold_46, align 2
+
+ST_1: StgValue_58 (366)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:96
+branch287:1  br label %16
+
+ST_1: StgValue_59 (368)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:97
+:0  br label %._crit_edge
+
+ST_1: tmp_5 (370)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:0  %tmp_5 = zext i32 %targetInd_read to i64
+
+ST_1: tmp_8412 (371)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:1  %tmp_8412 = trunc i64 %val_V_read to i8
+
+ST_1: tmp_8413 (372)  [1/1] 0.00ns
+:2  %tmp_8413 = trunc i32 %targetMem_read to i4
+
+ST_1: weights3_m_weights_V (373)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:3  %weights3_m_weights_V = getelementptr [512 x i8]* @weights3_m_weights_V, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_32 (374)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:4  %weights3_m_weights_V_32 = getelementptr [512 x i8]* @weights3_m_weights_V_1, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_33 (375)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:5  %weights3_m_weights_V_33 = getelementptr [512 x i8]* @weights3_m_weights_V_2, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_34 (376)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:6  %weights3_m_weights_V_34 = getelementptr [512 x i8]* @weights3_m_weights_V_3, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_35 (377)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:7  %weights3_m_weights_V_35 = getelementptr [512 x i8]* @weights3_m_weights_V_4, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_36 (378)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:8  %weights3_m_weights_V_36 = getelementptr [512 x i8]* @weights3_m_weights_V_5, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_37 (379)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:9  %weights3_m_weights_V_37 = getelementptr [512 x i8]* @weights3_m_weights_V_6, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_38 (380)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:10  %weights3_m_weights_V_38 = getelementptr [512 x i8]* @weights3_m_weights_V_7, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_39 (381)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:11  %weights3_m_weights_V_39 = getelementptr [512 x i8]* @weights3_m_weights_V_8, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_40 (382)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:12  %weights3_m_weights_V_40 = getelementptr [512 x i8]* @weights3_m_weights_V_9, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_41 (383)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:13  %weights3_m_weights_V_41 = getelementptr [512 x i8]* @weights3_m_weights_V_10, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_42 (384)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:14  %weights3_m_weights_V_42 = getelementptr [512 x i8]* @weights3_m_weights_V_11, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_43 (385)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:15  %weights3_m_weights_V_43 = getelementptr [512 x i8]* @weights3_m_weights_V_12, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_44 (386)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:16  %weights3_m_weights_V_44 = getelementptr [512 x i8]* @weights3_m_weights_V_13, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_45 (387)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:17  %weights3_m_weights_V_45 = getelementptr [512 x i8]* @weights3_m_weights_V_14, i64 0, i64 %tmp_5
+
+ST_1: weights3_m_weights_V_46 (388)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:18  %weights3_m_weights_V_46 = getelementptr [512 x i8]* @weights3_m_weights_V_15, i64 0, i64 %tmp_5
+
+ST_1: StgValue_79 (389)  [1/1] 1.94ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+:19  switch i4 %tmp_8413, label %branch271 [
+    i4 0, label %branch256
+    i4 1, label %branch257
+    i4 2, label %branch258
+    i4 3, label %branch259
+    i4 4, label %branch260
+    i4 5, label %branch261
+    i4 6, label %branch262
+    i4 7, label %branch263
+    i4 -8, label %branch264
+    i4 -7, label %branch265
+    i4 -6, label %branch266
+    i4 -5, label %branch267
+    i4 -4, label %branch268
+    i4 -3, label %branch269
+    i4 -2, label %branch270
+  ]
+
+ST_1: StgValue_80 (391)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch270:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_45, align 1
+
+ST_1: StgValue_81 (392)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch270:1  br label %14
+
+ST_1: StgValue_82 (394)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch269:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_44, align 1
+
+ST_1: StgValue_83 (395)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch269:1  br label %14
+
+ST_1: StgValue_84 (397)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch268:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_43, align 1
+
+ST_1: StgValue_85 (398)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch268:1  br label %14
+
+ST_1: StgValue_86 (400)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch267:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_42, align 1
+
+ST_1: StgValue_87 (401)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch267:1  br label %14
+
+ST_1: StgValue_88 (403)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch266:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_41, align 1
+
+ST_1: StgValue_89 (404)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch266:1  br label %14
+
+ST_1: StgValue_90 (406)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch265:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_40, align 1
+
+ST_1: StgValue_91 (407)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch265:1  br label %14
+
+ST_1: StgValue_92 (409)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch264:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_39, align 1
+
+ST_1: StgValue_93 (410)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch264:1  br label %14
+
+ST_1: StgValue_94 (412)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch263:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_38, align 1
+
+ST_1: StgValue_95 (413)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch263:1  br label %14
+
+ST_1: StgValue_96 (415)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch262:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_37, align 1
+
+ST_1: StgValue_97 (416)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch262:1  br label %14
+
+ST_1: StgValue_98 (418)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch261:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_36, align 1
+
+ST_1: StgValue_99 (419)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch261:1  br label %14
+
+ST_1: StgValue_100 (421)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch260:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_35, align 1
+
+ST_1: StgValue_101 (422)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch260:1  br label %14
+
+ST_1: StgValue_102 (424)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch259:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_34, align 1
+
+ST_1: StgValue_103 (425)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch259:1  br label %14
+
+ST_1: StgValue_104 (427)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch258:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_33, align 1
+
+ST_1: StgValue_105 (428)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch258:1  br label %14
+
+ST_1: StgValue_106 (430)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch257:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_32, align 1
+
+ST_1: StgValue_107 (431)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch257:1  br label %14
+
+ST_1: StgValue_108 (433)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch256:0  store i8 %tmp_8412, i8* %weights3_m_weights_V, align 1
+
+ST_1: StgValue_109 (434)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch256:1  br label %14
+
+ST_1: StgValue_110 (436)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch271:0  store i8 %tmp_8412, i8* %weights3_m_weights_V_46, align 1
+
+ST_1: StgValue_111 (437)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93
+branch271:1  br label %14
+
+ST_1: StgValue_112 (439)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:94
+:0  br label %._crit_edge
+
+ST_1: tmp_4 (441)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:0  %tmp_4 = zext i32 %targetInd_read to i64
+
+ST_1: tmp_8410 (442)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:1  %tmp_8410 = trunc i64 %val_V_read to i16
+
+ST_1: tmp_8411 (443)  [1/1] 0.00ns
+:2  %tmp_8411 = trunc i32 %targetMem_read to i5
+
+ST_1: threshs2_m_threshold (444)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:3  %threshs2_m_threshold = getelementptr [32 x i16]* @threshs2_m_threshold_31, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_64 (445)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:4  %threshs2_m_threshold_64 = getelementptr [32 x i16]* @threshs2_m_threshold_30, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_65 (446)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:5  %threshs2_m_threshold_65 = getelementptr [32 x i16]* @threshs2_m_threshold_19, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_66 (447)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:6  %threshs2_m_threshold_66 = getelementptr [32 x i16]* @threshs2_m_threshold_8, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_67 (448)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:7  %threshs2_m_threshold_67 = getelementptr [32 x i16]* @threshs2_m_threshold_5, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_68 (449)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:8  %threshs2_m_threshold_68 = getelementptr [32 x i16]* @threshs2_m_threshold_4, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_69 (450)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:9  %threshs2_m_threshold_69 = getelementptr [32 x i16]* @threshs2_m_threshold_3, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_70 (451)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:10  %threshs2_m_threshold_70 = getelementptr [32 x i16]* @threshs2_m_threshold_2, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_71 (452)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:11  %threshs2_m_threshold_71 = getelementptr [32 x i16]* @threshs2_m_threshold_1, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_72 (453)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:12  %threshs2_m_threshold_72 = getelementptr [32 x i16]* @threshs2_m_threshold, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_73 (454)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:13  %threshs2_m_threshold_73 = getelementptr [32 x i16]* @threshs2_m_threshold_29, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_74 (455)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:14  %threshs2_m_threshold_74 = getelementptr [32 x i16]* @threshs2_m_threshold_28, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_75 (456)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:15  %threshs2_m_threshold_75 = getelementptr [32 x i16]* @threshs2_m_threshold_27, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_76 (457)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:16  %threshs2_m_threshold_76 = getelementptr [32 x i16]* @threshs2_m_threshold_26, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_77 (458)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:17  %threshs2_m_threshold_77 = getelementptr [32 x i16]* @threshs2_m_threshold_25, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_78 (459)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:18  %threshs2_m_threshold_78 = getelementptr [32 x i16]* @threshs2_m_threshold_24, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_79 (460)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:19  %threshs2_m_threshold_79 = getelementptr [32 x i16]* @threshs2_m_threshold_23, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_80 (461)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:20  %threshs2_m_threshold_80 = getelementptr [32 x i16]* @threshs2_m_threshold_22, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_81 (462)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:21  %threshs2_m_threshold_81 = getelementptr [32 x i16]* @threshs2_m_threshold_21, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_82 (463)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:22  %threshs2_m_threshold_82 = getelementptr [32 x i16]* @threshs2_m_threshold_20, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_83 (464)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:23  %threshs2_m_threshold_83 = getelementptr [32 x i16]* @threshs2_m_threshold_18, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_84 (465)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:24  %threshs2_m_threshold_84 = getelementptr [32 x i16]* @threshs2_m_threshold_17, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_85 (466)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:25  %threshs2_m_threshold_85 = getelementptr [32 x i16]* @threshs2_m_threshold_16, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_86 (467)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:26  %threshs2_m_threshold_86 = getelementptr [32 x i16]* @threshs2_m_threshold_15, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_87 (468)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:27  %threshs2_m_threshold_87 = getelementptr [32 x i16]* @threshs2_m_threshold_14, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_88 (469)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:28  %threshs2_m_threshold_88 = getelementptr [32 x i16]* @threshs2_m_threshold_13, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_89 (470)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:29  %threshs2_m_threshold_89 = getelementptr [32 x i16]* @threshs2_m_threshold_12, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_90 (471)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:30  %threshs2_m_threshold_90 = getelementptr [32 x i16]* @threshs2_m_threshold_11, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_91 (472)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:31  %threshs2_m_threshold_91 = getelementptr [32 x i16]* @threshs2_m_threshold_10, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_92 (473)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:32  %threshs2_m_threshold_92 = getelementptr [32 x i16]* @threshs2_m_threshold_9, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_93 (474)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:33  %threshs2_m_threshold_93 = getelementptr [32 x i16]* @threshs2_m_threshold_7, i64 0, i64 %tmp_4
+
+ST_1: threshs2_m_threshold_94 (475)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:34  %threshs2_m_threshold_94 = getelementptr [32 x i16]* @threshs2_m_threshold_6, i64 0, i64 %tmp_4
+
+ST_1: StgValue_148 (476)  [1/1] 1.97ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+:35  switch i5 %tmp_8411, label %branch255 [
+    i5 0, label %branch224
+    i5 1, label %branch225
+    i5 2, label %branch226
+    i5 3, label %branch227
+    i5 4, label %branch228
+    i5 5, label %branch229
+    i5 6, label %branch230
+    i5 7, label %branch231
+    i5 8, label %branch232
+    i5 9, label %branch233
+    i5 10, label %branch234
+    i5 11, label %branch235
+    i5 12, label %branch236
+    i5 13, label %branch237
+    i5 14, label %branch238
+    i5 15, label %branch239
+    i5 -16, label %branch240
+    i5 -15, label %branch241
+    i5 -14, label %branch242
+    i5 -13, label %branch243
+    i5 -12, label %branch244
+    i5 -11, label %branch245
+    i5 -10, label %branch246
+    i5 -9, label %branch247
+    i5 -8, label %branch248
+    i5 -7, label %branch249
+    i5 -6, label %branch250
+    i5 -5, label %branch251
+    i5 -4, label %branch252
+    i5 -3, label %branch253
+    i5 -2, label %branch254
+  ]
+
+ST_1: StgValue_149 (478)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch254:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_93, align 2
+
+ST_1: StgValue_150 (479)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch254:1  br label %12
+
+ST_1: StgValue_151 (481)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch253:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_92, align 2
+
+ST_1: StgValue_152 (482)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch253:1  br label %12
+
+ST_1: StgValue_153 (484)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch252:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_91, align 2
+
+ST_1: StgValue_154 (485)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch252:1  br label %12
+
+ST_1: StgValue_155 (487)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch251:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_90, align 2
+
+ST_1: StgValue_156 (488)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch251:1  br label %12
+
+ST_1: StgValue_157 (490)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch250:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_89, align 2
+
+ST_1: StgValue_158 (491)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch250:1  br label %12
+
+ST_1: StgValue_159 (493)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch249:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_88, align 2
+
+ST_1: StgValue_160 (494)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch249:1  br label %12
+
+ST_1: StgValue_161 (496)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch248:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_87, align 2
+
+ST_1: StgValue_162 (497)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch248:1  br label %12
+
+ST_1: StgValue_163 (499)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch247:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_86, align 2
+
+ST_1: StgValue_164 (500)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch247:1  br label %12
+
+ST_1: StgValue_165 (502)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch246:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_85, align 2
+
+ST_1: StgValue_166 (503)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch246:1  br label %12
+
+ST_1: StgValue_167 (505)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch245:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_84, align 2
+
+ST_1: StgValue_168 (506)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch245:1  br label %12
+
+ST_1: StgValue_169 (508)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch244:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_83, align 2
+
+ST_1: StgValue_170 (509)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch244:1  br label %12
+
+ST_1: StgValue_171 (511)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch243:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_82, align 2
+
+ST_1: StgValue_172 (512)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch243:1  br label %12
+
+ST_1: StgValue_173 (514)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch242:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_81, align 2
+
+ST_1: StgValue_174 (515)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch242:1  br label %12
+
+ST_1: StgValue_175 (517)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch241:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_80, align 2
+
+ST_1: StgValue_176 (518)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch241:1  br label %12
+
+ST_1: StgValue_177 (520)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch240:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_79, align 2
+
+ST_1: StgValue_178 (521)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch240:1  br label %12
+
+ST_1: StgValue_179 (523)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch239:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_78, align 2
+
+ST_1: StgValue_180 (524)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch239:1  br label %12
+
+ST_1: StgValue_181 (526)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch238:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_77, align 2
+
+ST_1: StgValue_182 (527)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch238:1  br label %12
+
+ST_1: StgValue_183 (529)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch237:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_76, align 2
+
+ST_1: StgValue_184 (530)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch237:1  br label %12
+
+ST_1: StgValue_185 (532)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch236:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_75, align 2
+
+ST_1: StgValue_186 (533)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch236:1  br label %12
+
+ST_1: StgValue_187 (535)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch235:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_74, align 2
+
+ST_1: StgValue_188 (536)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch235:1  br label %12
+
+ST_1: StgValue_189 (538)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch234:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_73, align 2
+
+ST_1: StgValue_190 (539)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch234:1  br label %12
+
+ST_1: StgValue_191 (541)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch233:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_72, align 2
+
+ST_1: StgValue_192 (542)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch233:1  br label %12
+
+ST_1: StgValue_193 (544)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch232:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_71, align 2
+
+ST_1: StgValue_194 (545)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch232:1  br label %12
+
+ST_1: StgValue_195 (547)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch231:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_70, align 2
+
+ST_1: StgValue_196 (548)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch231:1  br label %12
+
+ST_1: StgValue_197 (550)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch230:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_69, align 2
+
+ST_1: StgValue_198 (551)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch230:1  br label %12
+
+ST_1: StgValue_199 (553)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch229:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_68, align 2
+
+ST_1: StgValue_200 (554)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch229:1  br label %12
+
+ST_1: StgValue_201 (556)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch228:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_67, align 2
+
+ST_1: StgValue_202 (557)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch228:1  br label %12
+
+ST_1: StgValue_203 (559)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch227:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_66, align 2
+
+ST_1: StgValue_204 (560)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch227:1  br label %12
+
+ST_1: StgValue_205 (562)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch226:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_65, align 2
+
+ST_1: StgValue_206 (563)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch226:1  br label %12
+
+ST_1: StgValue_207 (565)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch225:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_64, align 2
+
+ST_1: StgValue_208 (566)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch225:1  br label %12
+
+ST_1: StgValue_209 (568)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch224:0  store i16 %tmp_8410, i16* %threshs2_m_threshold, align 2
+
+ST_1: StgValue_210 (569)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch224:1  br label %12
+
+ST_1: StgValue_211 (571)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch255:0  store i16 %tmp_8410, i16* %threshs2_m_threshold_94, align 2
+
+ST_1: StgValue_212 (572)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:90
+branch255:1  br label %12
+
+ST_1: StgValue_213 (574)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:91
+:0  br label %._crit_edge
+
+ST_1: tmp_3 (576)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:0  %tmp_3 = zext i32 %targetInd_read to i64
+
+ST_1: tmp_8409 (577)  [1/1] 0.00ns
+:1  %tmp_8409 = trunc i32 %targetMem_read to i5
+
+ST_1: weights2_m_weights_V (578)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:2  %weights2_m_weights_V = getelementptr [512 x i64]* @weights2_m_weights_V, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_64 (579)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:3  %weights2_m_weights_V_64 = getelementptr [512 x i64]* @weights2_m_weights_V_1, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_65 (580)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:4  %weights2_m_weights_V_65 = getelementptr [512 x i64]* @weights2_m_weights_V_2, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_66 (581)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:5  %weights2_m_weights_V_66 = getelementptr [512 x i64]* @weights2_m_weights_V_3, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_67 (582)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:6  %weights2_m_weights_V_67 = getelementptr [512 x i64]* @weights2_m_weights_V_4, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_68 (583)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:7  %weights2_m_weights_V_68 = getelementptr [512 x i64]* @weights2_m_weights_V_5, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_69 (584)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:8  %weights2_m_weights_V_69 = getelementptr [512 x i64]* @weights2_m_weights_V_6, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_70 (585)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:9  %weights2_m_weights_V_70 = getelementptr [512 x i64]* @weights2_m_weights_V_7, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_71 (586)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:10  %weights2_m_weights_V_71 = getelementptr [512 x i64]* @weights2_m_weights_V_8, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_72 (587)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:11  %weights2_m_weights_V_72 = getelementptr [512 x i64]* @weights2_m_weights_V_9, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_73 (588)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:12  %weights2_m_weights_V_73 = getelementptr [512 x i64]* @weights2_m_weights_V_10, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_74 (589)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:13  %weights2_m_weights_V_74 = getelementptr [512 x i64]* @weights2_m_weights_V_11, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_75 (590)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:14  %weights2_m_weights_V_75 = getelementptr [512 x i64]* @weights2_m_weights_V_12, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_76 (591)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:15  %weights2_m_weights_V_76 = getelementptr [512 x i64]* @weights2_m_weights_V_13, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_77 (592)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:16  %weights2_m_weights_V_77 = getelementptr [512 x i64]* @weights2_m_weights_V_14, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_78 (593)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:17  %weights2_m_weights_V_78 = getelementptr [512 x i64]* @weights2_m_weights_V_15, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_79 (594)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:18  %weights2_m_weights_V_79 = getelementptr [512 x i64]* @weights2_m_weights_V_16, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_80 (595)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:19  %weights2_m_weights_V_80 = getelementptr [512 x i64]* @weights2_m_weights_V_17, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_81 (596)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:20  %weights2_m_weights_V_81 = getelementptr [512 x i64]* @weights2_m_weights_V_18, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_82 (597)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:21  %weights2_m_weights_V_82 = getelementptr [512 x i64]* @weights2_m_weights_V_19, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_83 (598)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:22  %weights2_m_weights_V_83 = getelementptr [512 x i64]* @weights2_m_weights_V_20, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_84 (599)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:23  %weights2_m_weights_V_84 = getelementptr [512 x i64]* @weights2_m_weights_V_21, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_85 (600)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:24  %weights2_m_weights_V_85 = getelementptr [512 x i64]* @weights2_m_weights_V_22, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_86 (601)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:25  %weights2_m_weights_V_86 = getelementptr [512 x i64]* @weights2_m_weights_V_23, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_87 (602)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:26  %weights2_m_weights_V_87 = getelementptr [512 x i64]* @weights2_m_weights_V_24, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_88 (603)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:27  %weights2_m_weights_V_88 = getelementptr [512 x i64]* @weights2_m_weights_V_25, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_89 (604)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:28  %weights2_m_weights_V_89 = getelementptr [512 x i64]* @weights2_m_weights_V_26, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_90 (605)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:29  %weights2_m_weights_V_90 = getelementptr [512 x i64]* @weights2_m_weights_V_27, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_91 (606)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:30  %weights2_m_weights_V_91 = getelementptr [512 x i64]* @weights2_m_weights_V_28, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_92 (607)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:31  %weights2_m_weights_V_92 = getelementptr [512 x i64]* @weights2_m_weights_V_29, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_93 (608)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:32  %weights2_m_weights_V_93 = getelementptr [512 x i64]* @weights2_m_weights_V_30, i64 0, i64 %tmp_3
+
+ST_1: weights2_m_weights_V_94 (609)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:33  %weights2_m_weights_V_94 = getelementptr [512 x i64]* @weights2_m_weights_V_31, i64 0, i64 %tmp_3
+
+ST_1: StgValue_248 (610)  [1/1] 1.97ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+:34  switch i5 %tmp_8409, label %branch223 [
+    i5 0, label %branch192
+    i5 1, label %branch193
+    i5 2, label %branch194
+    i5 3, label %branch195
+    i5 4, label %branch196
+    i5 5, label %branch197
+    i5 6, label %branch198
+    i5 7, label %branch199
+    i5 8, label %branch200
+    i5 9, label %branch201
+    i5 10, label %branch202
+    i5 11, label %branch203
+    i5 12, label %branch204
+    i5 13, label %branch205
+    i5 14, label %branch206
+    i5 15, label %branch207
+    i5 -16, label %branch208
+    i5 -15, label %branch209
+    i5 -14, label %branch210
+    i5 -13, label %branch211
+    i5 -12, label %branch212
+    i5 -11, label %branch213
+    i5 -10, label %branch214
+    i5 -9, label %branch215
+    i5 -8, label %branch216
+    i5 -7, label %branch217
+    i5 -6, label %branch218
+    i5 -5, label %branch219
+    i5 -4, label %branch220
+    i5 -3, label %branch221
+    i5 -2, label %branch222
+  ]
+
+ST_1: StgValue_249 (612)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch222:0  store i64 %val_V_read, i64* %weights2_m_weights_V_93, align 8
+
+ST_1: StgValue_250 (613)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch222:1  br label %10
+
+ST_1: StgValue_251 (615)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch221:0  store i64 %val_V_read, i64* %weights2_m_weights_V_92, align 8
+
+ST_1: StgValue_252 (616)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch221:1  br label %10
+
+ST_1: StgValue_253 (618)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch220:0  store i64 %val_V_read, i64* %weights2_m_weights_V_91, align 8
+
+ST_1: StgValue_254 (619)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch220:1  br label %10
+
+ST_1: StgValue_255 (621)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch219:0  store i64 %val_V_read, i64* %weights2_m_weights_V_90, align 8
+
+ST_1: StgValue_256 (622)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch219:1  br label %10
+
+ST_1: StgValue_257 (624)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch218:0  store i64 %val_V_read, i64* %weights2_m_weights_V_89, align 8
+
+ST_1: StgValue_258 (625)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch218:1  br label %10
+
+ST_1: StgValue_259 (627)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch217:0  store i64 %val_V_read, i64* %weights2_m_weights_V_88, align 8
+
+ST_1: StgValue_260 (628)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch217:1  br label %10
+
+ST_1: StgValue_261 (630)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch216:0  store i64 %val_V_read, i64* %weights2_m_weights_V_87, align 8
+
+ST_1: StgValue_262 (631)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch216:1  br label %10
+
+ST_1: StgValue_263 (633)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch215:0  store i64 %val_V_read, i64* %weights2_m_weights_V_86, align 8
+
+ST_1: StgValue_264 (634)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch215:1  br label %10
+
+ST_1: StgValue_265 (636)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch214:0  store i64 %val_V_read, i64* %weights2_m_weights_V_85, align 8
+
+ST_1: StgValue_266 (637)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch214:1  br label %10
+
+ST_1: StgValue_267 (639)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch213:0  store i64 %val_V_read, i64* %weights2_m_weights_V_84, align 8
+
+ST_1: StgValue_268 (640)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch213:1  br label %10
+
+ST_1: StgValue_269 (642)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch212:0  store i64 %val_V_read, i64* %weights2_m_weights_V_83, align 8
+
+ST_1: StgValue_270 (643)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch212:1  br label %10
+
+ST_1: StgValue_271 (645)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch211:0  store i64 %val_V_read, i64* %weights2_m_weights_V_82, align 8
+
+ST_1: StgValue_272 (646)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch211:1  br label %10
+
+ST_1: StgValue_273 (648)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch210:0  store i64 %val_V_read, i64* %weights2_m_weights_V_81, align 8
+
+ST_1: StgValue_274 (649)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch210:1  br label %10
+
+ST_1: StgValue_275 (651)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch209:0  store i64 %val_V_read, i64* %weights2_m_weights_V_80, align 8
+
+ST_1: StgValue_276 (652)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch209:1  br label %10
+
+ST_1: StgValue_277 (654)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch208:0  store i64 %val_V_read, i64* %weights2_m_weights_V_79, align 8
+
+ST_1: StgValue_278 (655)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch208:1  br label %10
+
+ST_1: StgValue_279 (657)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch207:0  store i64 %val_V_read, i64* %weights2_m_weights_V_78, align 8
+
+ST_1: StgValue_280 (658)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch207:1  br label %10
+
+ST_1: StgValue_281 (660)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch206:0  store i64 %val_V_read, i64* %weights2_m_weights_V_77, align 8
+
+ST_1: StgValue_282 (661)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch206:1  br label %10
+
+ST_1: StgValue_283 (663)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch205:0  store i64 %val_V_read, i64* %weights2_m_weights_V_76, align 8
+
+ST_1: StgValue_284 (664)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch205:1  br label %10
+
+ST_1: StgValue_285 (666)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch204:0  store i64 %val_V_read, i64* %weights2_m_weights_V_75, align 8
+
+ST_1: StgValue_286 (667)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch204:1  br label %10
+
+ST_1: StgValue_287 (669)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch203:0  store i64 %val_V_read, i64* %weights2_m_weights_V_74, align 8
+
+ST_1: StgValue_288 (670)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch203:1  br label %10
+
+ST_1: StgValue_289 (672)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch202:0  store i64 %val_V_read, i64* %weights2_m_weights_V_73, align 8
+
+ST_1: StgValue_290 (673)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch202:1  br label %10
+
+ST_1: StgValue_291 (675)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch201:0  store i64 %val_V_read, i64* %weights2_m_weights_V_72, align 8
+
+ST_1: StgValue_292 (676)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch201:1  br label %10
+
+ST_1: StgValue_293 (678)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch200:0  store i64 %val_V_read, i64* %weights2_m_weights_V_71, align 8
+
+ST_1: StgValue_294 (679)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch200:1  br label %10
+
+ST_1: StgValue_295 (681)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch199:0  store i64 %val_V_read, i64* %weights2_m_weights_V_70, align 8
+
+ST_1: StgValue_296 (682)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch199:1  br label %10
+
+ST_1: StgValue_297 (684)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch198:0  store i64 %val_V_read, i64* %weights2_m_weights_V_69, align 8
+
+ST_1: StgValue_298 (685)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch198:1  br label %10
+
+ST_1: StgValue_299 (687)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch197:0  store i64 %val_V_read, i64* %weights2_m_weights_V_68, align 8
+
+ST_1: StgValue_300 (688)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch197:1  br label %10
+
+ST_1: StgValue_301 (690)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch196:0  store i64 %val_V_read, i64* %weights2_m_weights_V_67, align 8
+
+ST_1: StgValue_302 (691)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch196:1  br label %10
+
+ST_1: StgValue_303 (693)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch195:0  store i64 %val_V_read, i64* %weights2_m_weights_V_66, align 8
+
+ST_1: StgValue_304 (694)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch195:1  br label %10
+
+ST_1: StgValue_305 (696)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch194:0  store i64 %val_V_read, i64* %weights2_m_weights_V_65, align 8
+
+ST_1: StgValue_306 (697)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch194:1  br label %10
+
+ST_1: StgValue_307 (699)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch193:0  store i64 %val_V_read, i64* %weights2_m_weights_V_64, align 8
+
+ST_1: StgValue_308 (700)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch193:1  br label %10
+
+ST_1: StgValue_309 (702)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch192:0  store i64 %val_V_read, i64* %weights2_m_weights_V, align 8
+
+ST_1: StgValue_310 (703)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch192:1  br label %10
+
+ST_1: StgValue_311 (705)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch223:0  store i64 %val_V_read, i64* %weights2_m_weights_V_94, align 8
+
+ST_1: StgValue_312 (706)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:87
+branch223:1  br label %10
+
+ST_1: StgValue_313 (708)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:88
+:0  br label %._crit_edge
+
+ST_1: tmp_2 (710)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:0  %tmp_2 = zext i32 %targetInd_read to i64
+
+ST_1: tmp_8407 (711)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:1  %tmp_8407 = trunc i64 %val_V_read to i16
+
+ST_1: tmp_8408 (712)  [1/1] 0.00ns
+:2  %tmp_8408 = trunc i32 %targetMem_read to i6
+
+ST_1: threshs1_m_threshold (713)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:3  %threshs1_m_threshold = getelementptr [16 x i16]* @threshs1_m_threshold_63, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_128 (714)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:4  %threshs1_m_threshold_128 = getelementptr [16 x i16]* @threshs1_m_threshold_62, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_129 (715)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:5  %threshs1_m_threshold_129 = getelementptr [16 x i16]* @threshs1_m_threshold_51, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_130 (716)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:6  %threshs1_m_threshold_130 = getelementptr [16 x i16]* @threshs1_m_threshold_40, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_131 (717)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:7  %threshs1_m_threshold_131 = getelementptr [16 x i16]* @threshs1_m_threshold_29, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_132 (718)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:8  %threshs1_m_threshold_132 = getelementptr [16 x i16]* @threshs1_m_threshold_18, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_133 (719)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:9  %threshs1_m_threshold_133 = getelementptr [16 x i16]* @threshs1_m_threshold_7, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_134 (720)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:10  %threshs1_m_threshold_134 = getelementptr [16 x i16]* @threshs1_m_threshold_2, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_135 (721)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:11  %threshs1_m_threshold_135 = getelementptr [16 x i16]* @threshs1_m_threshold_1, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_136 (722)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:12  %threshs1_m_threshold_136 = getelementptr [16 x i16]* @threshs1_m_threshold, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_137 (723)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:13  %threshs1_m_threshold_137 = getelementptr [16 x i16]* @threshs1_m_threshold_61, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_138 (724)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:14  %threshs1_m_threshold_138 = getelementptr [16 x i16]* @threshs1_m_threshold_60, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_139 (725)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:15  %threshs1_m_threshold_139 = getelementptr [16 x i16]* @threshs1_m_threshold_59, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_140 (726)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:16  %threshs1_m_threshold_140 = getelementptr [16 x i16]* @threshs1_m_threshold_58, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_141 (727)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:17  %threshs1_m_threshold_141 = getelementptr [16 x i16]* @threshs1_m_threshold_57, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_142 (728)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:18  %threshs1_m_threshold_142 = getelementptr [16 x i16]* @threshs1_m_threshold_56, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_143 (729)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:19  %threshs1_m_threshold_143 = getelementptr [16 x i16]* @threshs1_m_threshold_55, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_144 (730)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:20  %threshs1_m_threshold_144 = getelementptr [16 x i16]* @threshs1_m_threshold_54, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_145 (731)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:21  %threshs1_m_threshold_145 = getelementptr [16 x i16]* @threshs1_m_threshold_53, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_146 (732)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:22  %threshs1_m_threshold_146 = getelementptr [16 x i16]* @threshs1_m_threshold_52, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_147 (733)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:23  %threshs1_m_threshold_147 = getelementptr [16 x i16]* @threshs1_m_threshold_50, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_148 (734)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:24  %threshs1_m_threshold_148 = getelementptr [16 x i16]* @threshs1_m_threshold_49, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_149 (735)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:25  %threshs1_m_threshold_149 = getelementptr [16 x i16]* @threshs1_m_threshold_48, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_150 (736)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:26  %threshs1_m_threshold_150 = getelementptr [16 x i16]* @threshs1_m_threshold_47, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_151 (737)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:27  %threshs1_m_threshold_151 = getelementptr [16 x i16]* @threshs1_m_threshold_46, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_152 (738)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:28  %threshs1_m_threshold_152 = getelementptr [16 x i16]* @threshs1_m_threshold_45, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_153 (739)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:29  %threshs1_m_threshold_153 = getelementptr [16 x i16]* @threshs1_m_threshold_44, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_154 (740)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:30  %threshs1_m_threshold_154 = getelementptr [16 x i16]* @threshs1_m_threshold_43, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_155 (741)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:31  %threshs1_m_threshold_155 = getelementptr [16 x i16]* @threshs1_m_threshold_42, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_156 (742)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:32  %threshs1_m_threshold_156 = getelementptr [16 x i16]* @threshs1_m_threshold_41, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_157 (743)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:33  %threshs1_m_threshold_157 = getelementptr [16 x i16]* @threshs1_m_threshold_39, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_158 (744)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:34  %threshs1_m_threshold_158 = getelementptr [16 x i16]* @threshs1_m_threshold_38, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_159 (745)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:35  %threshs1_m_threshold_159 = getelementptr [16 x i16]* @threshs1_m_threshold_37, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_160 (746)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:36  %threshs1_m_threshold_160 = getelementptr [16 x i16]* @threshs1_m_threshold_36, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_161 (747)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:37  %threshs1_m_threshold_161 = getelementptr [16 x i16]* @threshs1_m_threshold_35, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_162 (748)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:38  %threshs1_m_threshold_162 = getelementptr [16 x i16]* @threshs1_m_threshold_34, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_163 (749)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:39  %threshs1_m_threshold_163 = getelementptr [16 x i16]* @threshs1_m_threshold_33, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_164 (750)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:40  %threshs1_m_threshold_164 = getelementptr [16 x i16]* @threshs1_m_threshold_32, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_165 (751)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:41  %threshs1_m_threshold_165 = getelementptr [16 x i16]* @threshs1_m_threshold_31, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_166 (752)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:42  %threshs1_m_threshold_166 = getelementptr [16 x i16]* @threshs1_m_threshold_30, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_167 (753)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:43  %threshs1_m_threshold_167 = getelementptr [16 x i16]* @threshs1_m_threshold_28, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_168 (754)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:44  %threshs1_m_threshold_168 = getelementptr [16 x i16]* @threshs1_m_threshold_27, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_169 (755)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:45  %threshs1_m_threshold_169 = getelementptr [16 x i16]* @threshs1_m_threshold_26, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_170 (756)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:46  %threshs1_m_threshold_170 = getelementptr [16 x i16]* @threshs1_m_threshold_25, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_171 (757)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:47  %threshs1_m_threshold_171 = getelementptr [16 x i16]* @threshs1_m_threshold_24, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_172 (758)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:48  %threshs1_m_threshold_172 = getelementptr [16 x i16]* @threshs1_m_threshold_23, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_173 (759)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:49  %threshs1_m_threshold_173 = getelementptr [16 x i16]* @threshs1_m_threshold_22, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_174 (760)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:50  %threshs1_m_threshold_174 = getelementptr [16 x i16]* @threshs1_m_threshold_21, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_175 (761)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:51  %threshs1_m_threshold_175 = getelementptr [16 x i16]* @threshs1_m_threshold_20, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_176 (762)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:52  %threshs1_m_threshold_176 = getelementptr [16 x i16]* @threshs1_m_threshold_19, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_177 (763)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:53  %threshs1_m_threshold_177 = getelementptr [16 x i16]* @threshs1_m_threshold_17, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_178 (764)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:54  %threshs1_m_threshold_178 = getelementptr [16 x i16]* @threshs1_m_threshold_16, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_179 (765)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:55  %threshs1_m_threshold_179 = getelementptr [16 x i16]* @threshs1_m_threshold_15, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_180 (766)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:56  %threshs1_m_threshold_180 = getelementptr [16 x i16]* @threshs1_m_threshold_14, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_181 (767)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:57  %threshs1_m_threshold_181 = getelementptr [16 x i16]* @threshs1_m_threshold_13, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_182 (768)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:58  %threshs1_m_threshold_182 = getelementptr [16 x i16]* @threshs1_m_threshold_12, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_183 (769)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:59  %threshs1_m_threshold_183 = getelementptr [16 x i16]* @threshs1_m_threshold_11, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_184 (770)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:60  %threshs1_m_threshold_184 = getelementptr [16 x i16]* @threshs1_m_threshold_10, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_185 (771)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:61  %threshs1_m_threshold_185 = getelementptr [16 x i16]* @threshs1_m_threshold_9, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_186 (772)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:62  %threshs1_m_threshold_186 = getelementptr [16 x i16]* @threshs1_m_threshold_8, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_187 (773)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:63  %threshs1_m_threshold_187 = getelementptr [16 x i16]* @threshs1_m_threshold_6, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_188 (774)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:64  %threshs1_m_threshold_188 = getelementptr [16 x i16]* @threshs1_m_threshold_5, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_189 (775)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:65  %threshs1_m_threshold_189 = getelementptr [16 x i16]* @threshs1_m_threshold_4, i64 0, i64 %tmp_2
+
+ST_1: threshs1_m_threshold_190 (776)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:66  %threshs1_m_threshold_190 = getelementptr [16 x i16]* @threshs1_m_threshold_3, i64 0, i64 %tmp_2
+
+ST_1: StgValue_381 (777)  [1/1] 2.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+:67  switch i6 %tmp_8408, label %branch191 [
+    i6 0, label %branch128
+    i6 1, label %branch129
+    i6 2, label %branch130
+    i6 3, label %branch131
+    i6 4, label %branch132
+    i6 5, label %branch133
+    i6 6, label %branch134
+    i6 7, label %branch135
+    i6 8, label %branch136
+    i6 9, label %branch137
+    i6 10, label %branch138
+    i6 11, label %branch139
+    i6 12, label %branch140
+    i6 13, label %branch141
+    i6 14, label %branch142
+    i6 15, label %branch143
+    i6 16, label %branch144
+    i6 17, label %branch145
+    i6 18, label %branch146
+    i6 19, label %branch147
+    i6 20, label %branch148
+    i6 21, label %branch149
+    i6 22, label %branch150
+    i6 23, label %branch151
+    i6 24, label %branch152
+    i6 25, label %branch153
+    i6 26, label %branch154
+    i6 27, label %branch155
+    i6 28, label %branch156
+    i6 29, label %branch157
+    i6 30, label %branch158
+    i6 31, label %branch159
+    i6 -32, label %branch160
+    i6 -31, label %branch161
+    i6 -30, label %branch162
+    i6 -29, label %branch163
+    i6 -28, label %branch164
+    i6 -27, label %branch165
+    i6 -26, label %branch166
+    i6 -25, label %branch167
+    i6 -24, label %branch168
+    i6 -23, label %branch169
+    i6 -22, label %branch170
+    i6 -21, label %branch171
+    i6 -20, label %branch172
+    i6 -19, label %branch173
+    i6 -18, label %branch174
+    i6 -17, label %branch175
+    i6 -16, label %branch176
+    i6 -15, label %branch177
+    i6 -14, label %branch178
+    i6 -13, label %branch179
+    i6 -12, label %branch180
+    i6 -11, label %branch181
+    i6 -10, label %branch182
+    i6 -9, label %branch183
+    i6 -8, label %branch184
+    i6 -7, label %branch185
+    i6 -6, label %branch186
+    i6 -5, label %branch187
+    i6 -4, label %branch188
+    i6 -3, label %branch189
+    i6 -2, label %branch190
+  ]
+
+ST_1: StgValue_382 (779)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch190:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_189, align 2
+
+ST_1: StgValue_383 (780)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch190:1  br label %8
+
+ST_1: StgValue_384 (782)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch189:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_188, align 2
+
+ST_1: StgValue_385 (783)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch189:1  br label %8
+
+ST_1: StgValue_386 (785)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch188:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_187, align 2
+
+ST_1: StgValue_387 (786)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch188:1  br label %8
+
+ST_1: StgValue_388 (788)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch187:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_186, align 2
+
+ST_1: StgValue_389 (789)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch187:1  br label %8
+
+ST_1: StgValue_390 (791)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch186:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_185, align 2
+
+ST_1: StgValue_391 (792)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch186:1  br label %8
+
+ST_1: StgValue_392 (794)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch185:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_184, align 2
+
+ST_1: StgValue_393 (795)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch185:1  br label %8
+
+ST_1: StgValue_394 (797)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch184:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_183, align 2
+
+ST_1: StgValue_395 (798)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch184:1  br label %8
+
+ST_1: StgValue_396 (800)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch183:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_182, align 2
+
+ST_1: StgValue_397 (801)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch183:1  br label %8
+
+ST_1: StgValue_398 (803)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch182:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_181, align 2
+
+ST_1: StgValue_399 (804)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch182:1  br label %8
+
+ST_1: StgValue_400 (806)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch181:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_180, align 2
+
+ST_1: StgValue_401 (807)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch181:1  br label %8
+
+ST_1: StgValue_402 (809)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch180:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_179, align 2
+
+ST_1: StgValue_403 (810)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch180:1  br label %8
+
+ST_1: StgValue_404 (812)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch179:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_178, align 2
+
+ST_1: StgValue_405 (813)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch179:1  br label %8
+
+ST_1: StgValue_406 (815)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch178:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_177, align 2
+
+ST_1: StgValue_407 (816)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch178:1  br label %8
+
+ST_1: StgValue_408 (818)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch177:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_176, align 2
+
+ST_1: StgValue_409 (819)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch177:1  br label %8
+
+ST_1: StgValue_410 (821)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch176:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_175, align 2
+
+ST_1: StgValue_411 (822)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch176:1  br label %8
+
+ST_1: StgValue_412 (824)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch175:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_174, align 2
+
+ST_1: StgValue_413 (825)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch175:1  br label %8
+
+ST_1: StgValue_414 (827)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch174:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_173, align 2
+
+ST_1: StgValue_415 (828)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch174:1  br label %8
+
+ST_1: StgValue_416 (830)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch173:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_172, align 2
+
+ST_1: StgValue_417 (831)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch173:1  br label %8
+
+ST_1: StgValue_418 (833)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch172:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_171, align 2
+
+ST_1: StgValue_419 (834)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch172:1  br label %8
+
+ST_1: StgValue_420 (836)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch171:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_170, align 2
+
+ST_1: StgValue_421 (837)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch171:1  br label %8
+
+ST_1: StgValue_422 (839)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch170:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_169, align 2
+
+ST_1: StgValue_423 (840)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch170:1  br label %8
+
+ST_1: StgValue_424 (842)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch169:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_168, align 2
+
+ST_1: StgValue_425 (843)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch169:1  br label %8
+
+ST_1: StgValue_426 (845)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch168:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_167, align 2
+
+ST_1: StgValue_427 (846)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch168:1  br label %8
+
+ST_1: StgValue_428 (848)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch167:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_166, align 2
+
+ST_1: StgValue_429 (849)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch167:1  br label %8
+
+ST_1: StgValue_430 (851)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch166:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_165, align 2
+
+ST_1: StgValue_431 (852)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch166:1  br label %8
+
+ST_1: StgValue_432 (854)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch165:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_164, align 2
+
+ST_1: StgValue_433 (855)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch165:1  br label %8
+
+ST_1: StgValue_434 (857)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch164:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_163, align 2
+
+ST_1: StgValue_435 (858)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch164:1  br label %8
+
+ST_1: StgValue_436 (860)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch163:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_162, align 2
+
+ST_1: StgValue_437 (861)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch163:1  br label %8
+
+ST_1: StgValue_438 (863)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch162:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_161, align 2
+
+ST_1: StgValue_439 (864)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch162:1  br label %8
+
+ST_1: StgValue_440 (866)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch161:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_160, align 2
+
+ST_1: StgValue_441 (867)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch161:1  br label %8
+
+ST_1: StgValue_442 (869)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch160:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_159, align 2
+
+ST_1: StgValue_443 (870)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch160:1  br label %8
+
+ST_1: StgValue_444 (872)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch159:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_158, align 2
+
+ST_1: StgValue_445 (873)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch159:1  br label %8
+
+ST_1: StgValue_446 (875)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch158:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_157, align 2
+
+ST_1: StgValue_447 (876)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch158:1  br label %8
+
+ST_1: StgValue_448 (878)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch157:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_156, align 2
+
+ST_1: StgValue_449 (879)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch157:1  br label %8
+
+ST_1: StgValue_450 (881)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch156:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_155, align 2
+
+ST_1: StgValue_451 (882)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch156:1  br label %8
+
+ST_1: StgValue_452 (884)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch155:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_154, align 2
+
+ST_1: StgValue_453 (885)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch155:1  br label %8
+
+ST_1: StgValue_454 (887)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch154:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_153, align 2
+
+ST_1: StgValue_455 (888)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch154:1  br label %8
+
+ST_1: StgValue_456 (890)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch153:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_152, align 2
+
+ST_1: StgValue_457 (891)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch153:1  br label %8
+
+ST_1: StgValue_458 (893)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch152:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_151, align 2
+
+ST_1: StgValue_459 (894)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch152:1  br label %8
+
+ST_1: StgValue_460 (896)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch151:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_150, align 2
+
+ST_1: StgValue_461 (897)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch151:1  br label %8
+
+ST_1: StgValue_462 (899)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch150:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_149, align 2
+
+ST_1: StgValue_463 (900)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch150:1  br label %8
+
+ST_1: StgValue_464 (902)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch149:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_148, align 2
+
+ST_1: StgValue_465 (903)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch149:1  br label %8
+
+ST_1: StgValue_466 (905)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch148:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_147, align 2
+
+ST_1: StgValue_467 (906)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch148:1  br label %8
+
+ST_1: StgValue_468 (908)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch147:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_146, align 2
+
+ST_1: StgValue_469 (909)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch147:1  br label %8
+
+ST_1: StgValue_470 (911)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch146:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_145, align 2
+
+ST_1: StgValue_471 (912)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch146:1  br label %8
+
+ST_1: StgValue_472 (914)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch145:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_144, align 2
+
+ST_1: StgValue_473 (915)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch145:1  br label %8
+
+ST_1: StgValue_474 (917)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch144:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_143, align 2
+
+ST_1: StgValue_475 (918)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch144:1  br label %8
+
+ST_1: StgValue_476 (920)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch143:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_142, align 2
+
+ST_1: StgValue_477 (921)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch143:1  br label %8
+
+ST_1: StgValue_478 (923)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch142:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_141, align 2
+
+ST_1: StgValue_479 (924)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch142:1  br label %8
+
+ST_1: StgValue_480 (926)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch141:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_140, align 2
+
+ST_1: StgValue_481 (927)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch141:1  br label %8
+
+ST_1: StgValue_482 (929)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch140:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_139, align 2
+
+ST_1: StgValue_483 (930)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch140:1  br label %8
+
+ST_1: StgValue_484 (932)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch139:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_138, align 2
+
+ST_1: StgValue_485 (933)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch139:1  br label %8
+
+ST_1: StgValue_486 (935)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch138:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_137, align 2
+
+ST_1: StgValue_487 (936)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch138:1  br label %8
+
+ST_1: StgValue_488 (938)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch137:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_136, align 2
+
+ST_1: StgValue_489 (939)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch137:1  br label %8
+
+ST_1: StgValue_490 (941)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch136:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_135, align 2
+
+ST_1: StgValue_491 (942)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch136:1  br label %8
+
+ST_1: StgValue_492 (944)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch135:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_134, align 2
+
+ST_1: StgValue_493 (945)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch135:1  br label %8
+
+ST_1: StgValue_494 (947)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch134:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_133, align 2
+
+ST_1: StgValue_495 (948)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch134:1  br label %8
+
+ST_1: StgValue_496 (950)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch133:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_132, align 2
+
+ST_1: StgValue_497 (951)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch133:1  br label %8
+
+ST_1: StgValue_498 (953)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch132:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_131, align 2
+
+ST_1: StgValue_499 (954)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch132:1  br label %8
+
+ST_1: StgValue_500 (956)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch131:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_130, align 2
+
+ST_1: StgValue_501 (957)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch131:1  br label %8
+
+ST_1: StgValue_502 (959)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch130:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_129, align 2
+
+ST_1: StgValue_503 (960)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch130:1  br label %8
+
+ST_1: StgValue_504 (962)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch129:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_128, align 2
+
+ST_1: StgValue_505 (963)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch129:1  br label %8
+
+ST_1: StgValue_506 (965)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch128:0  store i16 %tmp_8407, i16* %threshs1_m_threshold, align 2
+
+ST_1: StgValue_507 (966)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch128:1  br label %8
+
+ST_1: StgValue_508 (968)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch191:0  store i16 %tmp_8407, i16* %threshs1_m_threshold_190, align 2
+
+ST_1: StgValue_509 (969)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:84
+branch191:1  br label %8
+
+ST_1: StgValue_510 (971)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:85
+:0  br label %._crit_edge
+
+ST_1: tmp_1 (973)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:0  %tmp_1 = zext i32 %targetInd_read to i64
+
+ST_1: tmp_8405 (974)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:1  %tmp_8405 = trunc i64 %val_V_read to i32
+
+ST_1: tmp_8406 (975)  [1/1] 0.00ns
+:2  %tmp_8406 = trunc i32 %targetMem_read to i6
+
+ST_1: weights1_m_weights_V (976)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:3  %weights1_m_weights_V = getelementptr [512 x i32]* @weights1_m_weights_V, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_128 (977)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:4  %weights1_m_weights_V_128 = getelementptr [512 x i32]* @weights1_m_weights_V_1, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_129 (978)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:5  %weights1_m_weights_V_129 = getelementptr [512 x i32]* @weights1_m_weights_V_2, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_130 (979)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:6  %weights1_m_weights_V_130 = getelementptr [512 x i32]* @weights1_m_weights_V_3, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_131 (980)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:7  %weights1_m_weights_V_131 = getelementptr [512 x i32]* @weights1_m_weights_V_4, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_132 (981)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:8  %weights1_m_weights_V_132 = getelementptr [512 x i32]* @weights1_m_weights_V_5, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_133 (982)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:9  %weights1_m_weights_V_133 = getelementptr [512 x i32]* @weights1_m_weights_V_6, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_134 (983)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:10  %weights1_m_weights_V_134 = getelementptr [512 x i32]* @weights1_m_weights_V_7, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_135 (984)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:11  %weights1_m_weights_V_135 = getelementptr [512 x i32]* @weights1_m_weights_V_8, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_136 (985)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:12  %weights1_m_weights_V_136 = getelementptr [512 x i32]* @weights1_m_weights_V_9, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_137 (986)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:13  %weights1_m_weights_V_137 = getelementptr [512 x i32]* @weights1_m_weights_V_10, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_138 (987)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:14  %weights1_m_weights_V_138 = getelementptr [512 x i32]* @weights1_m_weights_V_11, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_139 (988)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:15  %weights1_m_weights_V_139 = getelementptr [512 x i32]* @weights1_m_weights_V_12, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_140 (989)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:16  %weights1_m_weights_V_140 = getelementptr [512 x i32]* @weights1_m_weights_V_13, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_141 (990)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:17  %weights1_m_weights_V_141 = getelementptr [512 x i32]* @weights1_m_weights_V_14, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_142 (991)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:18  %weights1_m_weights_V_142 = getelementptr [512 x i32]* @weights1_m_weights_V_15, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_143 (992)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:19  %weights1_m_weights_V_143 = getelementptr [512 x i32]* @weights1_m_weights_V_16, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_144 (993)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:20  %weights1_m_weights_V_144 = getelementptr [512 x i32]* @weights1_m_weights_V_17, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_145 (994)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:21  %weights1_m_weights_V_145 = getelementptr [512 x i32]* @weights1_m_weights_V_18, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_146 (995)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:22  %weights1_m_weights_V_146 = getelementptr [512 x i32]* @weights1_m_weights_V_19, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_147 (996)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:23  %weights1_m_weights_V_147 = getelementptr [512 x i32]* @weights1_m_weights_V_20, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_148 (997)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:24  %weights1_m_weights_V_148 = getelementptr [512 x i32]* @weights1_m_weights_V_21, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_149 (998)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:25  %weights1_m_weights_V_149 = getelementptr [512 x i32]* @weights1_m_weights_V_22, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_150 (999)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:26  %weights1_m_weights_V_150 = getelementptr [512 x i32]* @weights1_m_weights_V_23, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_151 (1000)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:27  %weights1_m_weights_V_151 = getelementptr [512 x i32]* @weights1_m_weights_V_24, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_152 (1001)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:28  %weights1_m_weights_V_152 = getelementptr [512 x i32]* @weights1_m_weights_V_25, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_153 (1002)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:29  %weights1_m_weights_V_153 = getelementptr [512 x i32]* @weights1_m_weights_V_26, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_154 (1003)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:30  %weights1_m_weights_V_154 = getelementptr [512 x i32]* @weights1_m_weights_V_27, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_155 (1004)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:31  %weights1_m_weights_V_155 = getelementptr [512 x i32]* @weights1_m_weights_V_28, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_156 (1005)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:32  %weights1_m_weights_V_156 = getelementptr [512 x i32]* @weights1_m_weights_V_29, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_157 (1006)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:33  %weights1_m_weights_V_157 = getelementptr [512 x i32]* @weights1_m_weights_V_30, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_158 (1007)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:34  %weights1_m_weights_V_158 = getelementptr [512 x i32]* @weights1_m_weights_V_31, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_159 (1008)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:35  %weights1_m_weights_V_159 = getelementptr [512 x i32]* @weights1_m_weights_V_32, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_160 (1009)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:36  %weights1_m_weights_V_160 = getelementptr [512 x i32]* @weights1_m_weights_V_33, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_161 (1010)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:37  %weights1_m_weights_V_161 = getelementptr [512 x i32]* @weights1_m_weights_V_34, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_162 (1011)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:38  %weights1_m_weights_V_162 = getelementptr [512 x i32]* @weights1_m_weights_V_35, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_163 (1012)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:39  %weights1_m_weights_V_163 = getelementptr [512 x i32]* @weights1_m_weights_V_36, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_164 (1013)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:40  %weights1_m_weights_V_164 = getelementptr [512 x i32]* @weights1_m_weights_V_37, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_165 (1014)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:41  %weights1_m_weights_V_165 = getelementptr [512 x i32]* @weights1_m_weights_V_38, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_166 (1015)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:42  %weights1_m_weights_V_166 = getelementptr [512 x i32]* @weights1_m_weights_V_39, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_167 (1016)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:43  %weights1_m_weights_V_167 = getelementptr [512 x i32]* @weights1_m_weights_V_40, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_168 (1017)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:44  %weights1_m_weights_V_168 = getelementptr [512 x i32]* @weights1_m_weights_V_41, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_169 (1018)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:45  %weights1_m_weights_V_169 = getelementptr [512 x i32]* @weights1_m_weights_V_42, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_170 (1019)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:46  %weights1_m_weights_V_170 = getelementptr [512 x i32]* @weights1_m_weights_V_43, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_171 (1020)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:47  %weights1_m_weights_V_171 = getelementptr [512 x i32]* @weights1_m_weights_V_44, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_172 (1021)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:48  %weights1_m_weights_V_172 = getelementptr [512 x i32]* @weights1_m_weights_V_45, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_173 (1022)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:49  %weights1_m_weights_V_173 = getelementptr [512 x i32]* @weights1_m_weights_V_46, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_174 (1023)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:50  %weights1_m_weights_V_174 = getelementptr [512 x i32]* @weights1_m_weights_V_47, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_175 (1024)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:51  %weights1_m_weights_V_175 = getelementptr [512 x i32]* @weights1_m_weights_V_48, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_176 (1025)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:52  %weights1_m_weights_V_176 = getelementptr [512 x i32]* @weights1_m_weights_V_49, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_177 (1026)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:53  %weights1_m_weights_V_177 = getelementptr [512 x i32]* @weights1_m_weights_V_50, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_178 (1027)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:54  %weights1_m_weights_V_178 = getelementptr [512 x i32]* @weights1_m_weights_V_51, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_179 (1028)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:55  %weights1_m_weights_V_179 = getelementptr [512 x i32]* @weights1_m_weights_V_52, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_180 (1029)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:56  %weights1_m_weights_V_180 = getelementptr [512 x i32]* @weights1_m_weights_V_53, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_181 (1030)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:57  %weights1_m_weights_V_181 = getelementptr [512 x i32]* @weights1_m_weights_V_54, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_182 (1031)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:58  %weights1_m_weights_V_182 = getelementptr [512 x i32]* @weights1_m_weights_V_55, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_183 (1032)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:59  %weights1_m_weights_V_183 = getelementptr [512 x i32]* @weights1_m_weights_V_56, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_184 (1033)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:60  %weights1_m_weights_V_184 = getelementptr [512 x i32]* @weights1_m_weights_V_57, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_185 (1034)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:61  %weights1_m_weights_V_185 = getelementptr [512 x i32]* @weights1_m_weights_V_58, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_186 (1035)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:62  %weights1_m_weights_V_186 = getelementptr [512 x i32]* @weights1_m_weights_V_59, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_187 (1036)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:63  %weights1_m_weights_V_187 = getelementptr [512 x i32]* @weights1_m_weights_V_60, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_188 (1037)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:64  %weights1_m_weights_V_188 = getelementptr [512 x i32]* @weights1_m_weights_V_61, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_189 (1038)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:65  %weights1_m_weights_V_189 = getelementptr [512 x i32]* @weights1_m_weights_V_62, i64 0, i64 %tmp_1
+
+ST_1: weights1_m_weights_V_190 (1039)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:66  %weights1_m_weights_V_190 = getelementptr [512 x i32]* @weights1_m_weights_V_63, i64 0, i64 %tmp_1
+
+ST_1: StgValue_578 (1040)  [1/1] 2.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+:67  switch i6 %tmp_8406, label %branch127 [
+    i6 0, label %branch64
+    i6 1, label %branch65
+    i6 2, label %branch66
+    i6 3, label %branch67
+    i6 4, label %branch68
+    i6 5, label %branch69
+    i6 6, label %branch70
+    i6 7, label %branch71
+    i6 8, label %branch72
+    i6 9, label %branch73
+    i6 10, label %branch74
+    i6 11, label %branch75
+    i6 12, label %branch76
+    i6 13, label %branch77
+    i6 14, label %branch78
+    i6 15, label %branch79
+    i6 16, label %branch80
+    i6 17, label %branch81
+    i6 18, label %branch82
+    i6 19, label %branch83
+    i6 20, label %branch84
+    i6 21, label %branch85
+    i6 22, label %branch86
+    i6 23, label %branch87
+    i6 24, label %branch88
+    i6 25, label %branch89
+    i6 26, label %branch90
+    i6 27, label %branch91
+    i6 28, label %branch92
+    i6 29, label %branch93
+    i6 30, label %branch94
+    i6 31, label %branch95
+    i6 -32, label %branch96
+    i6 -31, label %branch97
+    i6 -30, label %branch98
+    i6 -29, label %branch99
+    i6 -28, label %branch100
+    i6 -27, label %branch101
+    i6 -26, label %branch102
+    i6 -25, label %branch103
+    i6 -24, label %branch104
+    i6 -23, label %branch105
+    i6 -22, label %branch106
+    i6 -21, label %branch107
+    i6 -20, label %branch108
+    i6 -19, label %branch109
+    i6 -18, label %branch110
+    i6 -17, label %branch111
+    i6 -16, label %branch112
+    i6 -15, label %branch113
+    i6 -14, label %branch114
+    i6 -13, label %branch115
+    i6 -12, label %branch116
+    i6 -11, label %branch117
+    i6 -10, label %branch118
+    i6 -9, label %branch119
+    i6 -8, label %branch120
+    i6 -7, label %branch121
+    i6 -6, label %branch122
+    i6 -5, label %branch123
+    i6 -4, label %branch124
+    i6 -3, label %branch125
+    i6 -2, label %branch126
+  ]
+
+ST_1: StgValue_579 (1042)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch126:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_189, align 4
+
+ST_1: StgValue_580 (1043)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch126:1  br label %6
+
+ST_1: StgValue_581 (1045)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch125:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_188, align 4
+
+ST_1: StgValue_582 (1046)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch125:1  br label %6
+
+ST_1: StgValue_583 (1048)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch124:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_187, align 4
+
+ST_1: StgValue_584 (1049)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch124:1  br label %6
+
+ST_1: StgValue_585 (1051)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch123:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_186, align 4
+
+ST_1: StgValue_586 (1052)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch123:1  br label %6
+
+ST_1: StgValue_587 (1054)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch122:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_185, align 4
+
+ST_1: StgValue_588 (1055)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch122:1  br label %6
+
+ST_1: StgValue_589 (1057)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch121:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_184, align 4
+
+ST_1: StgValue_590 (1058)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch121:1  br label %6
+
+ST_1: StgValue_591 (1060)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch120:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_183, align 4
+
+ST_1: StgValue_592 (1061)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch120:1  br label %6
+
+ST_1: StgValue_593 (1063)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch119:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_182, align 4
+
+ST_1: StgValue_594 (1064)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch119:1  br label %6
+
+ST_1: StgValue_595 (1066)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch118:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_181, align 4
+
+ST_1: StgValue_596 (1067)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch118:1  br label %6
+
+ST_1: StgValue_597 (1069)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch117:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_180, align 4
+
+ST_1: StgValue_598 (1070)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch117:1  br label %6
+
+ST_1: StgValue_599 (1072)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch116:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_179, align 4
+
+ST_1: StgValue_600 (1073)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch116:1  br label %6
+
+ST_1: StgValue_601 (1075)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch115:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_178, align 4
+
+ST_1: StgValue_602 (1076)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch115:1  br label %6
+
+ST_1: StgValue_603 (1078)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch114:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_177, align 4
+
+ST_1: StgValue_604 (1079)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch114:1  br label %6
+
+ST_1: StgValue_605 (1081)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch113:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_176, align 4
+
+ST_1: StgValue_606 (1082)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch113:1  br label %6
+
+ST_1: StgValue_607 (1084)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch112:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_175, align 4
+
+ST_1: StgValue_608 (1085)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch112:1  br label %6
+
+ST_1: StgValue_609 (1087)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch111:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_174, align 4
+
+ST_1: StgValue_610 (1088)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch111:1  br label %6
+
+ST_1: StgValue_611 (1090)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch110:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_173, align 4
+
+ST_1: StgValue_612 (1091)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch110:1  br label %6
+
+ST_1: StgValue_613 (1093)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch109:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_172, align 4
+
+ST_1: StgValue_614 (1094)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch109:1  br label %6
+
+ST_1: StgValue_615 (1096)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch108:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_171, align 4
+
+ST_1: StgValue_616 (1097)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch108:1  br label %6
+
+ST_1: StgValue_617 (1099)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch107:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_170, align 4
+
+ST_1: StgValue_618 (1100)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch107:1  br label %6
+
+ST_1: StgValue_619 (1102)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch106:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_169, align 4
+
+ST_1: StgValue_620 (1103)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch106:1  br label %6
+
+ST_1: StgValue_621 (1105)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch105:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_168, align 4
+
+ST_1: StgValue_622 (1106)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch105:1  br label %6
+
+ST_1: StgValue_623 (1108)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch104:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_167, align 4
+
+ST_1: StgValue_624 (1109)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch104:1  br label %6
+
+ST_1: StgValue_625 (1111)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch103:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_166, align 4
+
+ST_1: StgValue_626 (1112)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch103:1  br label %6
+
+ST_1: StgValue_627 (1114)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch102:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_165, align 4
+
+ST_1: StgValue_628 (1115)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch102:1  br label %6
+
+ST_1: StgValue_629 (1117)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch101:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_164, align 4
+
+ST_1: StgValue_630 (1118)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch101:1  br label %6
+
+ST_1: StgValue_631 (1120)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch100:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_163, align 4
+
+ST_1: StgValue_632 (1121)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch100:1  br label %6
+
+ST_1: StgValue_633 (1123)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch99:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_162, align 4
+
+ST_1: StgValue_634 (1124)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch99:1  br label %6
+
+ST_1: StgValue_635 (1126)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch98:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_161, align 4
+
+ST_1: StgValue_636 (1127)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch98:1  br label %6
+
+ST_1: StgValue_637 (1129)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch97:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_160, align 4
+
+ST_1: StgValue_638 (1130)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch97:1  br label %6
+
+ST_1: StgValue_639 (1132)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch96:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_159, align 4
+
+ST_1: StgValue_640 (1133)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch96:1  br label %6
+
+ST_1: StgValue_641 (1135)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch95:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_158, align 4
+
+ST_1: StgValue_642 (1136)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch95:1  br label %6
+
+ST_1: StgValue_643 (1138)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch94:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_157, align 4
+
+ST_1: StgValue_644 (1139)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch94:1  br label %6
+
+ST_1: StgValue_645 (1141)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch93:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_156, align 4
+
+ST_1: StgValue_646 (1142)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch93:1  br label %6
+
+ST_1: StgValue_647 (1144)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch92:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_155, align 4
+
+ST_1: StgValue_648 (1145)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch92:1  br label %6
+
+ST_1: StgValue_649 (1147)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch91:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_154, align 4
+
+ST_1: StgValue_650 (1148)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch91:1  br label %6
+
+ST_1: StgValue_651 (1150)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch90:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_153, align 4
+
+ST_1: StgValue_652 (1151)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch90:1  br label %6
+
+ST_1: StgValue_653 (1153)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch89:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_152, align 4
+
+ST_1: StgValue_654 (1154)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch89:1  br label %6
+
+ST_1: StgValue_655 (1156)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch88:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_151, align 4
+
+ST_1: StgValue_656 (1157)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch88:1  br label %6
+
+ST_1: StgValue_657 (1159)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch87:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_150, align 4
+
+ST_1: StgValue_658 (1160)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch87:1  br label %6
+
+ST_1: StgValue_659 (1162)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch86:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_149, align 4
+
+ST_1: StgValue_660 (1163)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch86:1  br label %6
+
+ST_1: StgValue_661 (1165)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch85:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_148, align 4
+
+ST_1: StgValue_662 (1166)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch85:1  br label %6
+
+ST_1: StgValue_663 (1168)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch84:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_147, align 4
+
+ST_1: StgValue_664 (1169)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch84:1  br label %6
+
+ST_1: StgValue_665 (1171)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch83:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_146, align 4
+
+ST_1: StgValue_666 (1172)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch83:1  br label %6
+
+ST_1: StgValue_667 (1174)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch82:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_145, align 4
+
+ST_1: StgValue_668 (1175)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch82:1  br label %6
+
+ST_1: StgValue_669 (1177)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch81:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_144, align 4
+
+ST_1: StgValue_670 (1178)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch81:1  br label %6
+
+ST_1: StgValue_671 (1180)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch80:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_143, align 4
+
+ST_1: StgValue_672 (1181)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch80:1  br label %6
+
+ST_1: StgValue_673 (1183)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch79:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_142, align 4
+
+ST_1: StgValue_674 (1184)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch79:1  br label %6
+
+ST_1: StgValue_675 (1186)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch78:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_141, align 4
+
+ST_1: StgValue_676 (1187)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch78:1  br label %6
+
+ST_1: StgValue_677 (1189)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch77:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_140, align 4
+
+ST_1: StgValue_678 (1190)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch77:1  br label %6
+
+ST_1: StgValue_679 (1192)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch76:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_139, align 4
+
+ST_1: StgValue_680 (1193)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch76:1  br label %6
+
+ST_1: StgValue_681 (1195)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch75:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_138, align 4
+
+ST_1: StgValue_682 (1196)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch75:1  br label %6
+
+ST_1: StgValue_683 (1198)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch74:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_137, align 4
+
+ST_1: StgValue_684 (1199)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch74:1  br label %6
+
+ST_1: StgValue_685 (1201)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch73:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_136, align 4
+
+ST_1: StgValue_686 (1202)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch73:1  br label %6
+
+ST_1: StgValue_687 (1204)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch72:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_135, align 4
+
+ST_1: StgValue_688 (1205)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch72:1  br label %6
+
+ST_1: StgValue_689 (1207)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch71:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_134, align 4
+
+ST_1: StgValue_690 (1208)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch71:1  br label %6
+
+ST_1: StgValue_691 (1210)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch70:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_133, align 4
+
+ST_1: StgValue_692 (1211)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch70:1  br label %6
+
+ST_1: StgValue_693 (1213)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch69:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_132, align 4
+
+ST_1: StgValue_694 (1214)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch69:1  br label %6
+
+ST_1: StgValue_695 (1216)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch68:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_131, align 4
+
+ST_1: StgValue_696 (1217)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch68:1  br label %6
+
+ST_1: StgValue_697 (1219)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch67:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_130, align 4
+
+ST_1: StgValue_698 (1220)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch67:1  br label %6
+
+ST_1: StgValue_699 (1222)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch66:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_129, align 4
+
+ST_1: StgValue_700 (1223)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch66:1  br label %6
+
+ST_1: StgValue_701 (1225)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch65:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_128, align 4
+
+ST_1: StgValue_702 (1226)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch65:1  br label %6
+
+ST_1: StgValue_703 (1228)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch64:0  store i32 %tmp_8405, i32* %weights1_m_weights_V, align 4
+
+ST_1: StgValue_704 (1229)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch64:1  br label %6
+
+ST_1: StgValue_705 (1231)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch127:0  store i32 %tmp_8405, i32* %weights1_m_weights_V_190, align 4
+
+ST_1: StgValue_706 (1232)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:81
+branch127:1  br label %6
+
+ST_1: StgValue_707 (1234)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:82
+:0  br label %._crit_edge
+
+ST_1: tmp_s (1236)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:0  %tmp_s = zext i32 %targetInd_read to i64
+
+ST_1: tmp_8403 (1237)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:1  %tmp_8403 = trunc i64 %val_V_read to i16
+
+ST_1: tmp_8404 (1238)  [1/1] 0.00ns
+:2  %tmp_8404 = trunc i32 %targetMem_read to i5
+
+ST_1: threshs0_m_threshold (1239)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:3  %threshs0_m_threshold = getelementptr [32 x i16]* @threshs0_m_threshold_31, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_64 (1240)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:4  %threshs0_m_threshold_64 = getelementptr [32 x i16]* @threshs0_m_threshold_30, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_65 (1241)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:5  %threshs0_m_threshold_65 = getelementptr [32 x i16]* @threshs0_m_threshold_19, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_66 (1242)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:6  %threshs0_m_threshold_66 = getelementptr [32 x i16]* @threshs0_m_threshold_8, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_67 (1243)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:7  %threshs0_m_threshold_67 = getelementptr [32 x i16]* @threshs0_m_threshold_5, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_68 (1244)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:8  %threshs0_m_threshold_68 = getelementptr [32 x i16]* @threshs0_m_threshold_4, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_69 (1245)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:9  %threshs0_m_threshold_69 = getelementptr [32 x i16]* @threshs0_m_threshold_3, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_70 (1246)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:10  %threshs0_m_threshold_70 = getelementptr [32 x i16]* @threshs0_m_threshold_2, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_71 (1247)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:11  %threshs0_m_threshold_71 = getelementptr [32 x i16]* @threshs0_m_threshold_1, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_72 (1248)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:12  %threshs0_m_threshold_72 = getelementptr [32 x i16]* @threshs0_m_threshold, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_73 (1249)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:13  %threshs0_m_threshold_73 = getelementptr [32 x i16]* @threshs0_m_threshold_29, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_74 (1250)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:14  %threshs0_m_threshold_74 = getelementptr [32 x i16]* @threshs0_m_threshold_28, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_75 (1251)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:15  %threshs0_m_threshold_75 = getelementptr [32 x i16]* @threshs0_m_threshold_27, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_76 (1252)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:16  %threshs0_m_threshold_76 = getelementptr [32 x i16]* @threshs0_m_threshold_26, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_77 (1253)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:17  %threshs0_m_threshold_77 = getelementptr [32 x i16]* @threshs0_m_threshold_25, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_78 (1254)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:18  %threshs0_m_threshold_78 = getelementptr [32 x i16]* @threshs0_m_threshold_24, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_79 (1255)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:19  %threshs0_m_threshold_79 = getelementptr [32 x i16]* @threshs0_m_threshold_23, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_80 (1256)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:20  %threshs0_m_threshold_80 = getelementptr [32 x i16]* @threshs0_m_threshold_22, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_81 (1257)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:21  %threshs0_m_threshold_81 = getelementptr [32 x i16]* @threshs0_m_threshold_21, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_82 (1258)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:22  %threshs0_m_threshold_82 = getelementptr [32 x i16]* @threshs0_m_threshold_20, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_83 (1259)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:23  %threshs0_m_threshold_83 = getelementptr [32 x i16]* @threshs0_m_threshold_18, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_84 (1260)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:24  %threshs0_m_threshold_84 = getelementptr [32 x i16]* @threshs0_m_threshold_17, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_85 (1261)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:25  %threshs0_m_threshold_85 = getelementptr [32 x i16]* @threshs0_m_threshold_16, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_86 (1262)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:26  %threshs0_m_threshold_86 = getelementptr [32 x i16]* @threshs0_m_threshold_15, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_87 (1263)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:27  %threshs0_m_threshold_87 = getelementptr [32 x i16]* @threshs0_m_threshold_14, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_88 (1264)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:28  %threshs0_m_threshold_88 = getelementptr [32 x i16]* @threshs0_m_threshold_13, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_89 (1265)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:29  %threshs0_m_threshold_89 = getelementptr [32 x i16]* @threshs0_m_threshold_12, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_90 (1266)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:30  %threshs0_m_threshold_90 = getelementptr [32 x i16]* @threshs0_m_threshold_11, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_91 (1267)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:31  %threshs0_m_threshold_91 = getelementptr [32 x i16]* @threshs0_m_threshold_10, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_92 (1268)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:32  %threshs0_m_threshold_92 = getelementptr [32 x i16]* @threshs0_m_threshold_9, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_93 (1269)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:33  %threshs0_m_threshold_93 = getelementptr [32 x i16]* @threshs0_m_threshold_7, i64 0, i64 %tmp_s
+
+ST_1: threshs0_m_threshold_94 (1270)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:34  %threshs0_m_threshold_94 = getelementptr [32 x i16]* @threshs0_m_threshold_6, i64 0, i64 %tmp_s
+
+ST_1: StgValue_743 (1271)  [1/1] 1.97ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+:35  switch i5 %tmp_8404, label %branch63 [
+    i5 0, label %branch32
+    i5 1, label %branch33
+    i5 2, label %branch34
+    i5 3, label %branch35
+    i5 4, label %branch36
+    i5 5, label %branch37
+    i5 6, label %branch38
+    i5 7, label %branch39
+    i5 8, label %branch40
+    i5 9, label %branch41
+    i5 10, label %branch42
+    i5 11, label %branch43
+    i5 12, label %branch44
+    i5 13, label %branch45
+    i5 14, label %branch46
+    i5 15, label %branch47
+    i5 -16, label %branch48
+    i5 -15, label %branch49
+    i5 -14, label %branch50
+    i5 -13, label %branch51
+    i5 -12, label %branch52
+    i5 -11, label %branch53
+    i5 -10, label %branch54
+    i5 -9, label %branch55
+    i5 -8, label %branch56
+    i5 -7, label %branch57
+    i5 -6, label %branch58
+    i5 -5, label %branch59
+    i5 -4, label %branch60
+    i5 -3, label %branch61
+    i5 -2, label %branch62
+  ]
+
+ST_1: StgValue_744 (1273)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch62:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_93, align 2
+
+ST_1: StgValue_745 (1274)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch62:1  br label %4
+
+ST_1: StgValue_746 (1276)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch61:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_92, align 2
+
+ST_1: StgValue_747 (1277)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch61:1  br label %4
+
+ST_1: StgValue_748 (1279)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch60:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_91, align 2
+
+ST_1: StgValue_749 (1280)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch60:1  br label %4
+
+ST_1: StgValue_750 (1282)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch59:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_90, align 2
+
+ST_1: StgValue_751 (1283)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch59:1  br label %4
+
+ST_1: StgValue_752 (1285)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch58:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_89, align 2
+
+ST_1: StgValue_753 (1286)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch58:1  br label %4
+
+ST_1: StgValue_754 (1288)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch57:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_88, align 2
+
+ST_1: StgValue_755 (1289)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch57:1  br label %4
+
+ST_1: StgValue_756 (1291)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch56:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_87, align 2
+
+ST_1: StgValue_757 (1292)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch56:1  br label %4
+
+ST_1: StgValue_758 (1294)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch55:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_86, align 2
+
+ST_1: StgValue_759 (1295)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch55:1  br label %4
+
+ST_1: StgValue_760 (1297)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch54:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_85, align 2
+
+ST_1: StgValue_761 (1298)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch54:1  br label %4
+
+ST_1: StgValue_762 (1300)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch53:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_84, align 2
+
+ST_1: StgValue_763 (1301)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch53:1  br label %4
+
+ST_1: StgValue_764 (1303)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch52:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_83, align 2
+
+ST_1: StgValue_765 (1304)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch52:1  br label %4
+
+ST_1: StgValue_766 (1306)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch51:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_82, align 2
+
+ST_1: StgValue_767 (1307)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch51:1  br label %4
+
+ST_1: StgValue_768 (1309)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch50:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_81, align 2
+
+ST_1: StgValue_769 (1310)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch50:1  br label %4
+
+ST_1: StgValue_770 (1312)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch49:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_80, align 2
+
+ST_1: StgValue_771 (1313)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch49:1  br label %4
+
+ST_1: StgValue_772 (1315)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch48:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_79, align 2
+
+ST_1: StgValue_773 (1316)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch48:1  br label %4
+
+ST_1: StgValue_774 (1318)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch47:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_78, align 2
+
+ST_1: StgValue_775 (1319)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch47:1  br label %4
+
+ST_1: StgValue_776 (1321)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch46:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_77, align 2
+
+ST_1: StgValue_777 (1322)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch46:1  br label %4
+
+ST_1: StgValue_778 (1324)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch45:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_76, align 2
+
+ST_1: StgValue_779 (1325)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch45:1  br label %4
+
+ST_1: StgValue_780 (1327)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch44:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_75, align 2
+
+ST_1: StgValue_781 (1328)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch44:1  br label %4
+
+ST_1: StgValue_782 (1330)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch43:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_74, align 2
+
+ST_1: StgValue_783 (1331)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch43:1  br label %4
+
+ST_1: StgValue_784 (1333)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch42:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_73, align 2
+
+ST_1: StgValue_785 (1334)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch42:1  br label %4
+
+ST_1: StgValue_786 (1336)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch41:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_72, align 2
+
+ST_1: StgValue_787 (1337)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch41:1  br label %4
+
+ST_1: StgValue_788 (1339)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch40:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_71, align 2
+
+ST_1: StgValue_789 (1340)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch40:1  br label %4
+
+ST_1: StgValue_790 (1342)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch39:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_70, align 2
+
+ST_1: StgValue_791 (1343)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch39:1  br label %4
+
+ST_1: StgValue_792 (1345)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch38:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_69, align 2
+
+ST_1: StgValue_793 (1346)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch38:1  br label %4
+
+ST_1: StgValue_794 (1348)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch37:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_68, align 2
+
+ST_1: StgValue_795 (1349)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch37:1  br label %4
+
+ST_1: StgValue_796 (1351)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch36:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_67, align 2
+
+ST_1: StgValue_797 (1352)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch36:1  br label %4
+
+ST_1: StgValue_798 (1354)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch35:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_66, align 2
+
+ST_1: StgValue_799 (1355)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch35:1  br label %4
+
+ST_1: StgValue_800 (1357)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch34:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_65, align 2
+
+ST_1: StgValue_801 (1358)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch34:1  br label %4
+
+ST_1: StgValue_802 (1360)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch33:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_64, align 2
+
+ST_1: StgValue_803 (1361)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch33:1  br label %4
+
+ST_1: StgValue_804 (1363)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch32:0  store i16 %tmp_8403, i16* %threshs0_m_threshold, align 2
+
+ST_1: StgValue_805 (1364)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch32:1  br label %4
+
+ST_1: StgValue_806 (1366)  [1/1] 2.39ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch63:0  store i16 %tmp_8403, i16* %threshs0_m_threshold_94, align 2
+
+ST_1: StgValue_807 (1367)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:78
+branch63:1  br label %4
+
+ST_1: StgValue_808 (1369)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:79
+:0  br label %._crit_edge
+
+ST_1: tmp (1371)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:0  %tmp = zext i32 %targetInd_read to i64
+
+ST_1: tmp_8402 (1372)  [1/1] 0.00ns
+:1  %tmp_8402 = trunc i32 %targetMem_read to i5
+
+ST_1: weights0_m_weights_V (1373)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:2  %weights0_m_weights_V = getelementptr [416 x i64]* @weights0_m_weights_V, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_64 (1374)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:3  %weights0_m_weights_V_64 = getelementptr [416 x i64]* @weights0_m_weights_V_1, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_65 (1375)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:4  %weights0_m_weights_V_65 = getelementptr [416 x i64]* @weights0_m_weights_V_2, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_66 (1376)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:5  %weights0_m_weights_V_66 = getelementptr [416 x i64]* @weights0_m_weights_V_3, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_67 (1377)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:6  %weights0_m_weights_V_67 = getelementptr [416 x i64]* @weights0_m_weights_V_4, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_68 (1378)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:7  %weights0_m_weights_V_68 = getelementptr [416 x i64]* @weights0_m_weights_V_5, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_69 (1379)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:8  %weights0_m_weights_V_69 = getelementptr [416 x i64]* @weights0_m_weights_V_6, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_70 (1380)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:9  %weights0_m_weights_V_70 = getelementptr [416 x i64]* @weights0_m_weights_V_7, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_71 (1381)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:10  %weights0_m_weights_V_71 = getelementptr [416 x i64]* @weights0_m_weights_V_8, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_72 (1382)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:11  %weights0_m_weights_V_72 = getelementptr [416 x i64]* @weights0_m_weights_V_9, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_73 (1383)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:12  %weights0_m_weights_V_73 = getelementptr [416 x i64]* @weights0_m_weights_V_10, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_74 (1384)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:13  %weights0_m_weights_V_74 = getelementptr [416 x i64]* @weights0_m_weights_V_11, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_75 (1385)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:14  %weights0_m_weights_V_75 = getelementptr [416 x i64]* @weights0_m_weights_V_12, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_76 (1386)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:15  %weights0_m_weights_V_76 = getelementptr [416 x i64]* @weights0_m_weights_V_13, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_77 (1387)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:16  %weights0_m_weights_V_77 = getelementptr [416 x i64]* @weights0_m_weights_V_14, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_78 (1388)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:17  %weights0_m_weights_V_78 = getelementptr [416 x i64]* @weights0_m_weights_V_15, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_79 (1389)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:18  %weights0_m_weights_V_79 = getelementptr [416 x i64]* @weights0_m_weights_V_16, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_80 (1390)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:19  %weights0_m_weights_V_80 = getelementptr [416 x i64]* @weights0_m_weights_V_17, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_81 (1391)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:20  %weights0_m_weights_V_81 = getelementptr [416 x i64]* @weights0_m_weights_V_18, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_82 (1392)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:21  %weights0_m_weights_V_82 = getelementptr [416 x i64]* @weights0_m_weights_V_19, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_83 (1393)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:22  %weights0_m_weights_V_83 = getelementptr [416 x i64]* @weights0_m_weights_V_20, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_84 (1394)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:23  %weights0_m_weights_V_84 = getelementptr [416 x i64]* @weights0_m_weights_V_21, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_85 (1395)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:24  %weights0_m_weights_V_85 = getelementptr [416 x i64]* @weights0_m_weights_V_22, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_86 (1396)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:25  %weights0_m_weights_V_86 = getelementptr [416 x i64]* @weights0_m_weights_V_23, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_87 (1397)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:26  %weights0_m_weights_V_87 = getelementptr [416 x i64]* @weights0_m_weights_V_24, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_88 (1398)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:27  %weights0_m_weights_V_88 = getelementptr [416 x i64]* @weights0_m_weights_V_25, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_89 (1399)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:28  %weights0_m_weights_V_89 = getelementptr [416 x i64]* @weights0_m_weights_V_26, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_90 (1400)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:29  %weights0_m_weights_V_90 = getelementptr [416 x i64]* @weights0_m_weights_V_27, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_91 (1401)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:30  %weights0_m_weights_V_91 = getelementptr [416 x i64]* @weights0_m_weights_V_28, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_92 (1402)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:31  %weights0_m_weights_V_92 = getelementptr [416 x i64]* @weights0_m_weights_V_29, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_93 (1403)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:32  %weights0_m_weights_V_93 = getelementptr [416 x i64]* @weights0_m_weights_V_30, i64 0, i64 %tmp
+
+ST_1: weights0_m_weights_V_94 (1404)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:33  %weights0_m_weights_V_94 = getelementptr [416 x i64]* @weights0_m_weights_V_31, i64 0, i64 %tmp
+
+ST_1: StgValue_843 (1405)  [1/1] 1.97ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+:34  switch i5 %tmp_8402, label %branch31 [
+    i5 0, label %branch0
+    i5 1, label %branch1
+    i5 2, label %branch2
+    i5 3, label %branch3
+    i5 4, label %branch4
+    i5 5, label %branch5
+    i5 6, label %branch6
+    i5 7, label %branch7
+    i5 8, label %branch8
+    i5 9, label %branch9
+    i5 10, label %branch10
+    i5 11, label %branch11
+    i5 12, label %branch12
+    i5 13, label %branch13
+    i5 14, label %branch14
+    i5 15, label %branch15
+    i5 -16, label %branch16
+    i5 -15, label %branch17
+    i5 -14, label %branch18
+    i5 -13, label %branch19
+    i5 -12, label %branch20
+    i5 -11, label %branch21
+    i5 -10, label %branch22
+    i5 -9, label %branch23
+    i5 -8, label %branch24
+    i5 -7, label %branch25
+    i5 -6, label %branch26
+    i5 -5, label %branch27
+    i5 -4, label %branch28
+    i5 -3, label %branch29
+    i5 -2, label %branch30
+  ]
+
+ST_1: StgValue_844 (1407)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch30:0  store i64 %val_V_read, i64* %weights0_m_weights_V_93, align 8
+
+ST_1: StgValue_845 (1408)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch30:1  br label %2
+
+ST_1: StgValue_846 (1410)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch29:0  store i64 %val_V_read, i64* %weights0_m_weights_V_92, align 8
+
+ST_1: StgValue_847 (1411)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch29:1  br label %2
+
+ST_1: StgValue_848 (1413)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch28:0  store i64 %val_V_read, i64* %weights0_m_weights_V_91, align 8
+
+ST_1: StgValue_849 (1414)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch28:1  br label %2
+
+ST_1: StgValue_850 (1416)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch27:0  store i64 %val_V_read, i64* %weights0_m_weights_V_90, align 8
+
+ST_1: StgValue_851 (1417)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch27:1  br label %2
+
+ST_1: StgValue_852 (1419)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch26:0  store i64 %val_V_read, i64* %weights0_m_weights_V_89, align 8
+
+ST_1: StgValue_853 (1420)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch26:1  br label %2
+
+ST_1: StgValue_854 (1422)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch25:0  store i64 %val_V_read, i64* %weights0_m_weights_V_88, align 8
+
+ST_1: StgValue_855 (1423)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch25:1  br label %2
+
+ST_1: StgValue_856 (1425)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch24:0  store i64 %val_V_read, i64* %weights0_m_weights_V_87, align 8
+
+ST_1: StgValue_857 (1426)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch24:1  br label %2
+
+ST_1: StgValue_858 (1428)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch23:0  store i64 %val_V_read, i64* %weights0_m_weights_V_86, align 8
+
+ST_1: StgValue_859 (1429)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch23:1  br label %2
+
+ST_1: StgValue_860 (1431)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch22:0  store i64 %val_V_read, i64* %weights0_m_weights_V_85, align 8
+
+ST_1: StgValue_861 (1432)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch22:1  br label %2
+
+ST_1: StgValue_862 (1434)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch21:0  store i64 %val_V_read, i64* %weights0_m_weights_V_84, align 8
+
+ST_1: StgValue_863 (1435)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch21:1  br label %2
+
+ST_1: StgValue_864 (1437)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch20:0  store i64 %val_V_read, i64* %weights0_m_weights_V_83, align 8
+
+ST_1: StgValue_865 (1438)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch20:1  br label %2
+
+ST_1: StgValue_866 (1440)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch19:0  store i64 %val_V_read, i64* %weights0_m_weights_V_82, align 8
+
+ST_1: StgValue_867 (1441)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch19:1  br label %2
+
+ST_1: StgValue_868 (1443)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch18:0  store i64 %val_V_read, i64* %weights0_m_weights_V_81, align 8
+
+ST_1: StgValue_869 (1444)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch18:1  br label %2
+
+ST_1: StgValue_870 (1446)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch17:0  store i64 %val_V_read, i64* %weights0_m_weights_V_80, align 8
+
+ST_1: StgValue_871 (1447)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch17:1  br label %2
+
+ST_1: StgValue_872 (1449)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch16:0  store i64 %val_V_read, i64* %weights0_m_weights_V_79, align 8
+
+ST_1: StgValue_873 (1450)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch16:1  br label %2
+
+ST_1: StgValue_874 (1452)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch15:0  store i64 %val_V_read, i64* %weights0_m_weights_V_78, align 8
+
+ST_1: StgValue_875 (1453)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch15:1  br label %2
+
+ST_1: StgValue_876 (1455)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch14:0  store i64 %val_V_read, i64* %weights0_m_weights_V_77, align 8
+
+ST_1: StgValue_877 (1456)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch14:1  br label %2
+
+ST_1: StgValue_878 (1458)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch13:0  store i64 %val_V_read, i64* %weights0_m_weights_V_76, align 8
+
+ST_1: StgValue_879 (1459)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch13:1  br label %2
+
+ST_1: StgValue_880 (1461)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch12:0  store i64 %val_V_read, i64* %weights0_m_weights_V_75, align 8
+
+ST_1: StgValue_881 (1462)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch12:1  br label %2
+
+ST_1: StgValue_882 (1464)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch11:0  store i64 %val_V_read, i64* %weights0_m_weights_V_74, align 8
+
+ST_1: StgValue_883 (1465)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch11:1  br label %2
+
+ST_1: StgValue_884 (1467)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch10:0  store i64 %val_V_read, i64* %weights0_m_weights_V_73, align 8
+
+ST_1: StgValue_885 (1468)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch10:1  br label %2
+
+ST_1: StgValue_886 (1470)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch9:0  store i64 %val_V_read, i64* %weights0_m_weights_V_72, align 8
+
+ST_1: StgValue_887 (1471)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch9:1  br label %2
+
+ST_1: StgValue_888 (1473)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch8:0  store i64 %val_V_read, i64* %weights0_m_weights_V_71, align 8
+
+ST_1: StgValue_889 (1474)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch8:1  br label %2
+
+ST_1: StgValue_890 (1476)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch7:0  store i64 %val_V_read, i64* %weights0_m_weights_V_70, align 8
+
+ST_1: StgValue_891 (1477)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch7:1  br label %2
+
+ST_1: StgValue_892 (1479)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch6:0  store i64 %val_V_read, i64* %weights0_m_weights_V_69, align 8
+
+ST_1: StgValue_893 (1480)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch6:1  br label %2
+
+ST_1: StgValue_894 (1482)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch5:0  store i64 %val_V_read, i64* %weights0_m_weights_V_68, align 8
+
+ST_1: StgValue_895 (1483)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch5:1  br label %2
+
+ST_1: StgValue_896 (1485)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch4:0  store i64 %val_V_read, i64* %weights0_m_weights_V_67, align 8
+
+ST_1: StgValue_897 (1486)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch4:1  br label %2
+
+ST_1: StgValue_898 (1488)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch3:0  store i64 %val_V_read, i64* %weights0_m_weights_V_66, align 8
+
+ST_1: StgValue_899 (1489)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch3:1  br label %2
+
+ST_1: StgValue_900 (1491)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch2:0  store i64 %val_V_read, i64* %weights0_m_weights_V_65, align 8
+
+ST_1: StgValue_901 (1492)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch2:1  br label %2
+
+ST_1: StgValue_902 (1494)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch1:0  store i64 %val_V_read, i64* %weights0_m_weights_V_64, align 8
+
+ST_1: StgValue_903 (1495)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch1:1  br label %2
+
+ST_1: StgValue_904 (1497)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch0:0  store i64 %val_V_read, i64* %weights0_m_weights_V, align 8
+
+ST_1: StgValue_905 (1498)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch0:1  br label %2
+
+ST_1: StgValue_906 (1500)  [1/1] 2.71ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch31:0  store i64 %val_V_read, i64* %weights0_m_weights_V_94, align 8
+
+ST_1: StgValue_907 (1501)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:75
+branch31:1  br label %2
+
+ST_1: StgValue_908 (1503)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:76
+:0  br label %._crit_edge
+
+ST_1: StgValue_909 (1505)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:99
+._crit_edge:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0.625ns.
+
+ <State 1>: 2.71ns
+The critical path consists of the following:
+	wire read on port 'val_V' [293]  (0 ns)
+	'store' operation (/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93) of variable 'tmp_8412', /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:93 on array 'weights3_m_weights_V_14' [391]  (2.71 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

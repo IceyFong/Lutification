@@ -1,0 +1,429 @@
+
+
+================================================================
+== Vivado HLS Report for 'DoCompute'
+================================================================
+* Date:           Thu May  7 18:29:37 2020
+
+* Version:        2016.3 (Build 1682563 on Mon Oct 10 19:41:59 MDT 2016)
+* Project:        lfcW1A1-pynqZ1-Z2
+* Solution:       sol1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|     11.75|        0.62|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    ?|    ?|    ?|    ?| dataflow |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 16
+* Pipeline: 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 16, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 }
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+* FSM state operations: 
+
+ <State 1>: 1.00ns
+ST_1: numReps_read (293)  [1/1] 0.00ns
+:0  %numReps_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %numReps)
+
+ST_1: out_V3_read (294)  [1/1] 0.00ns
+:1  %out_V3_read = call i61 @_ssdm_op_Read.ap_auto.i61(i61 %out_V3)
+
+ST_1: in_V1_read (295)  [1/1] 0.00ns
+:2  %in_V1_read = call i61 @_ssdm_op_Read.ap_auto.i61(i61 %in_V1)
+
+ST_1: out_V3_channel (296)  [1/1] 0.00ns
+:3  %out_V3_channel = alloca i61, align 8
+
+ST_1: numReps_channel22 (297)  [1/1] 0.00ns
+:4  %numReps_channel22 = alloca i32, align 4
+
+ST_1: numReps_channel21 (298)  [1/1] 0.00ns
+:5  %numReps_channel21 = alloca i32, align 4
+
+ST_1: numReps_channel20 (299)  [1/1] 0.00ns
+:6  %numReps_channel20 = alloca i32, align 4
+
+ST_1: numReps_channel19 (300)  [1/1] 0.00ns
+:7  %numReps_channel19 = alloca i32, align 4
+
+ST_1: numReps_channel18 (301)  [1/1] 0.00ns
+:8  %numReps_channel18 = alloca i32, align 4
+
+ST_1: numReps_channel17 (302)  [1/1] 0.00ns
+:9  %numReps_channel17 = alloca i32, align 4
+
+ST_1: numReps_channel (303)  [1/1] 0.00ns
+:10  %numReps_channel = alloca i32, align 4
+
+ST_1: wa_in_m_target_V_V (307)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/fclayer.h:104->/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:140
+:14  %wa_in_m_target_V_V = alloca i8, align 1
+
+ST_1: wa_out_m_buffer_V_V (310)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/fclayer.h:105->/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:140
+:17  %wa_out_m_buffer_V_V = alloca i16, align 2
+
+ST_1: memInStrm_V_V (313)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:103
+:20  %memInStrm_V_V = alloca i64, align 8
+
+ST_1: inter0_V_V (316)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:104
+:23  %inter0_V_V = alloca i32, align 4
+
+ST_1: inter1_V_V (319)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:105
+:26  %inter1_V_V = alloca i64, align 8
+
+ST_1: inter2_V_V (322)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:106
+:29  %inter2_V_V = alloca i32, align 4
+
+ST_1: memOutStrm_V_V (325)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:107
+:32  %memOutStrm_V_V = alloca i64, align 8
+
+ST_1: StgValue_35 (332)  [2/2] 1.00ns
+:39  call void @Mem2Stream_Batch12(i64* %in_V, i61 %in_V1_read, i64* %memInStrm_V_V, i32 %numReps_read, i32* %numReps_channel, i61 %out_V3_read, i61* %out_V3_channel)
+
+
+ <State 2>: 0.00ns
+ST_2: StgValue_36 (332)  [1/2] 0.00ns
+:39  call void @Mem2Stream_Batch12(i64* %in_V, i61 %in_V1_read, i64* %memInStrm_V_V, i32 %numReps_read, i32* %numReps_channel, i61 %out_V3_read, i61* %out_V3_channel)
+
+
+ <State 3>: 0.00ns
+ST_3: StgValue_37 (335)  [2/2] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/fclayer.h:109->/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:134
+:42  call fastcc void @Matrix_Vector_Activa(i64* %memInStrm_V_V, i32* %inter0_V_V, i32* nocapture %numReps_channel, i32* %numReps_channel17)
+
+
+ <State 4>: 0.00ns
+ST_4: StgValue_38 (335)  [1/2] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/fclayer.h:109->/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:134
+:42  call fastcc void @Matrix_Vector_Activa(i64* %memInStrm_V_V, i32* %inter0_V_V, i32* nocapture %numReps_channel, i32* %numReps_channel17)
+
+
+ <State 5>: 0.00ns
+ST_5: StgValue_39 (338)  [2/2] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/fclayer.h:109->/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:136
+:45  call fastcc void @Matrix_Vector_Activa.3(i32* %inter0_V_V, i64* %inter1_V_V, i32* nocapture %numReps_channel17, i32* %numReps_channel18)
+
+
+ <State 6>: 0.00ns
+ST_6: StgValue_40 (338)  [1/2] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/fclayer.h:109->/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:136
+:45  call fastcc void @Matrix_Vector_Activa.3(i32* %inter0_V_V, i64* %inter1_V_V, i32* nocapture %numReps_channel17, i32* %numReps_channel18)
+
+
+ <State 7>: 0.00ns
+ST_7: StgValue_41 (341)  [2/2] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/fclayer.h:109->/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:138
+:48  call fastcc void @Matrix_Vector_Activa.2(i64* %inter1_V_V, i32* %inter2_V_V, i32* nocapture %numReps_channel18, i32* %numReps_channel19)
+
+
+ <State 8>: 0.00ns
+ST_8: StgValue_42 (341)  [1/2] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/fclayer.h:109->/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:138
+:48  call fastcc void @Matrix_Vector_Activa.2(i64* %inter1_V_V, i32* %inter2_V_V, i32* nocapture %numReps_channel18, i32* %numReps_channel19)
+
+
+ <State 9>: 0.00ns
+ST_9: StgValue_43 (344)  [2/2] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:720->/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:721->/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/fclayer.h:104->/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:140
+:51  call fastcc void @StreamingDataWidthCo(i32* %inter2_V_V, i8* %wa_in_m_target_V_V, i32* nocapture %numReps_channel19, i32* %numReps_channel20)
+
+
+ <State 10>: 0.00ns
+ST_10: StgValue_44 (344)  [1/2] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:720->/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:721->/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/fclayer.h:104->/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:140
+:51  call fastcc void @StreamingDataWidthCo(i32* %inter2_V_V, i8* %wa_in_m_target_V_V, i32* nocapture %numReps_channel19, i32* %numReps_channel20)
+
+
+ <State 11>: 0.00ns
+ST_11: StgValue_45 (347)  [2/2] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/fclayer.h:109->/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:140
+:54  call fastcc void @Matrix_Vector_Activa.1(i8* %wa_in_m_target_V_V, i16* %wa_out_m_buffer_V_V, i32* nocapture %numReps_channel20, i32* %numReps_channel21)
+
+
+ <State 12>: 0.00ns
+ST_12: StgValue_46 (347)  [1/2] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/fclayer.h:109->/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:140
+:54  call fastcc void @Matrix_Vector_Activa.1(i8* %wa_in_m_target_V_V, i16* %wa_out_m_buffer_V_V, i32* nocapture %numReps_channel20, i32* %numReps_channel21)
+
+
+ <State 13>: 0.00ns
+ST_13: StgValue_47 (350)  [2/2] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:754->/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:753->/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/fclayer.h:111->/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:140
+:57  call fastcc void @StreamingDataWidthCo.1(i16* %wa_out_m_buffer_V_V, i64* %memOutStrm_V_V, i32* nocapture %numReps_channel21, i32* %numReps_channel22)
+
+
+ <State 14>: 0.00ns
+ST_14: StgValue_48 (350)  [1/2] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:754->/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:753->/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/fclayer.h:111->/home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:140
+:57  call fastcc void @StreamingDataWidthCo.1(i16* %wa_out_m_buffer_V_V, i64* %memOutStrm_V_V, i32* nocapture %numReps_channel21, i32* %numReps_channel22)
+
+
+ <State 15>: 0.00ns
+ST_15: StgValue_49 (351)  [2/2] 0.00ns
+:58  call void @Stream2Mem_Batch(i64* %memOutStrm_V_V, i64* %in_V, i61* nocapture %out_V3_channel, i32* %numReps_channel22)
+
+
+ <State 16>: 0.00ns
+ST_16: StgValue_50 (304)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:117
+:11  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str13) nounwind
+
+ST_16: StgValue_51 (305)  [1/1] 0.00ns
+:12  call void (...)* @_ssdm_op_SpecInterface(i64* %in_V, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str13, i32 0, i32 256, [8 x i8]* @p_str17, [6 x i8]* @p_str18, [1 x i8]* @p_str13, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str13, [1 x i8]* @p_str13)
+
+ST_16: StgValue_52 (306)  [1/1] 0.00ns
+:13  call void (...)* @_ssdm_op_SpecInterface(i64* %in_V, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str13, i32 0, i32 256, [8 x i8]* @p_str17, [6 x i8]* @p_str18, [1 x i8]* @p_str13, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str13, [1 x i8]* @p_str13)
+
+ST_16: empty (308)  [1/1] 0.00ns
+:15  %empty = call i32 (...)* @_ssdm_op_SpecChannel([19 x i8]* @wa_in_OC_m_target_OC, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i8* %wa_in_m_target_V_V, i8* %wa_in_m_target_V_V)
+
+ST_16: StgValue_54 (309)  [1/1] 0.00ns
+:16  call void (...)* @_ssdm_op_SpecInterface(i8* %wa_in_m_target_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: empty_6996 (311)  [1/1] 0.00ns
+:18  %empty_6996 = call i32 (...)* @_ssdm_op_SpecChannel([20 x i8]* @wa_out_OC_m_buffer_O, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 1, i16* %wa_out_m_buffer_V_V, i16* %wa_out_m_buffer_V_V)
+
+ST_16: StgValue_56 (312)  [1/1] 0.00ns
+:19  call void (...)* @_ssdm_op_SpecInterface(i16* %wa_out_m_buffer_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: empty_6997 (314)  [1/1] 0.00ns
+:21  %empty_6997 = call i32 (...)* @_ssdm_op_SpecChannel([14 x i8]* @memInStrm_OC_V_OC_V_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1024, i32 1024, i64* %memInStrm_V_V, i64* %memInStrm_V_V)
+
+ST_16: StgValue_58 (315)  [1/1] 0.00ns
+:22  call void (...)* @_ssdm_op_SpecInterface(i64* %memInStrm_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: empty_6998 (317)  [1/1] 0.00ns
+:24  %empty_6998 = call i32 (...)* @_ssdm_op_SpecChannel([11 x i8]* @inter0_OC_V_OC_V_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 16, i32 16, i32* %inter0_V_V, i32* %inter0_V_V)
+
+ST_16: StgValue_60 (318)  [1/1] 0.00ns
+:25  call void (...)* @_ssdm_op_SpecInterface(i32* %inter0_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: empty_6999 (320)  [1/1] 0.00ns
+:27  %empty_6999 = call i32 (...)* @_ssdm_op_SpecChannel([11 x i8]* @inter1_OC_V_OC_V_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 8, i32 8, i64* %inter1_V_V, i64* %inter1_V_V)
+
+ST_16: StgValue_62 (321)  [1/1] 0.00ns
+:28  call void (...)* @_ssdm_op_SpecInterface(i64* %inter1_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: empty_7000 (323)  [1/1] 0.00ns
+:30  %empty_7000 = call i32 (...)* @_ssdm_op_SpecChannel([11 x i8]* @inter2_OC_V_OC_V_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 16, i32 16, i32* %inter2_V_V, i32* %inter2_V_V)
+
+ST_16: StgValue_64 (324)  [1/1] 0.00ns
+:31  call void (...)* @_ssdm_op_SpecInterface(i32* %inter2_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: empty_7001 (326)  [1/1] 0.00ns
+:33  %empty_7001 = call i32 (...)* @_ssdm_op_SpecChannel([15 x i8]* @memOutStrm_OC_V_OC_V, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1024, i32 1024, i64* %memOutStrm_V_V, i64* %memOutStrm_V_V)
+
+ST_16: StgValue_66 (327)  [1/1] 0.00ns
+:34  call void (...)* @_ssdm_op_SpecInterface(i64* %memOutStrm_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: empty_7002 (328)  [1/1] 0.00ns
+:35  %empty_7002 = call i32 (...)* @_ssdm_op_SpecChannel([16 x i8]* @numReps_channel_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i32* %numReps_channel, i32* %numReps_channel)
+
+ST_16: StgValue_68 (329)  [1/1] 0.00ns
+:36  call void (...)* @_ssdm_op_SpecInterface(i32* %numReps_channel, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: empty_7003 (330)  [1/1] 0.00ns
+:37  %empty_7003 = call i32 (...)* @_ssdm_op_SpecChannel([15 x i8]* @out_OC_V3_channel_st, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 7, i32 0, i61* %out_V3_channel, i61* %out_V3_channel)
+
+ST_16: StgValue_70 (331)  [1/1] 0.00ns
+:38  call void (...)* @_ssdm_op_SpecInterface(i61* %out_V3_channel, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: empty_7004 (333)  [1/1] 0.00ns
+:40  %empty_7004 = call i32 (...)* @_ssdm_op_SpecChannel([18 x i8]* @numReps_channel17_st, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i32* %numReps_channel17, i32* %numReps_channel17)
+
+ST_16: StgValue_72 (334)  [1/1] 0.00ns
+:41  call void (...)* @_ssdm_op_SpecInterface(i32* %numReps_channel17, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: empty_7005 (336)  [1/1] 0.00ns
+:43  %empty_7005 = call i32 (...)* @_ssdm_op_SpecChannel([18 x i8]* @numReps_channel18_st, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i32* %numReps_channel18, i32* %numReps_channel18)
+
+ST_16: StgValue_74 (337)  [1/1] 0.00ns
+:44  call void (...)* @_ssdm_op_SpecInterface(i32* %numReps_channel18, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: empty_7006 (339)  [1/1] 0.00ns
+:46  %empty_7006 = call i32 (...)* @_ssdm_op_SpecChannel([18 x i8]* @numReps_channel19_st, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i32* %numReps_channel19, i32* %numReps_channel19)
+
+ST_16: StgValue_76 (340)  [1/1] 0.00ns
+:47  call void (...)* @_ssdm_op_SpecInterface(i32* %numReps_channel19, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: empty_7007 (342)  [1/1] 0.00ns
+:49  %empty_7007 = call i32 (...)* @_ssdm_op_SpecChannel([18 x i8]* @numReps_channel20_st, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i32* %numReps_channel20, i32* %numReps_channel20)
+
+ST_16: StgValue_78 (343)  [1/1] 0.00ns
+:50  call void (...)* @_ssdm_op_SpecInterface(i32* %numReps_channel20, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: empty_7008 (345)  [1/1] 0.00ns
+:52  %empty_7008 = call i32 (...)* @_ssdm_op_SpecChannel([18 x i8]* @numReps_channel21_st, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i32* %numReps_channel21, i32* %numReps_channel21)
+
+ST_16: StgValue_80 (346)  [1/1] 0.00ns
+:53  call void (...)* @_ssdm_op_SpecInterface(i32* %numReps_channel21, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: empty_7009 (348)  [1/1] 0.00ns
+:55  %empty_7009 = call i32 (...)* @_ssdm_op_SpecChannel([18 x i8]* @numReps_channel22_st, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1, i32 0, i32* %numReps_channel22, i32* %numReps_channel22)
+
+ST_16: StgValue_82 (349)  [1/1] 0.00ns
+:56  call void (...)* @_ssdm_op_SpecInterface(i32* %numReps_channel22, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_16: StgValue_83 (351)  [1/2] 0.00ns
+:58  call void @Stream2Mem_Batch(i64* %memOutStrm_V_V, i64* %in_V, i61* nocapture %out_V3_channel, i32* %numReps_channel22)
+
+ST_16: StgValue_84 (352)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//network/lfcW1A1/hw/top.cpp:143
+:59  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0.625ns.
+
+ <State 1>: 1ns
+The critical path consists of the following:
+	wire read on port 'numReps' [293]  (0 ns)
+	'call' operation to 'Mem2Stream_Batch12' [332]  (1 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+ <State 10>: 0ns
+The critical path consists of the following:
+
+ <State 11>: 0ns
+The critical path consists of the following:
+
+ <State 12>: 0ns
+The critical path consists of the following:
+
+ <State 13>: 0ns
+The critical path consists of the following:
+
+ <State 14>: 0ns
+The critical path consists of the following:
+
+ <State 15>: 0ns
+The critical path consists of the following:
+
+ <State 16>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

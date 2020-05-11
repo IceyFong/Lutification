@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:26 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Fri May  8 13:13:15 2020
+# Process ID: 11993
+# Current directory: /home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2
+# Command line: vivado lfcW1A1-pynqZ1-Z2.xpr
+# Log file: /home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/vivado.log
+# Journal file: /home/jf2715/BNN-PYNQ/bnn/src/network/output/vivado/lfcW1A1-pynqZ1-Z2/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project lfcW1A1-pynqZ1-Z2.xpr

@@ -1,0 +1,239 @@
+
+
+================================================================
+== Vivado HLS Report for 'StreamingDataWidthCo'
+================================================================
+* Date:           Thu May  7 18:29:18 2020
+
+* Version:        2016.3 (Build 1682563 on Mon Oct 10 19:41:59 MDT 2016)
+* Project:        lfcW1A1-pynqZ1-Z2
+* Solution:       sol1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|      6.33|        0.62|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         2|          1|          1|     ?|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 4
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 2, States = { 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	4  / (exitcond_i)
+	3  / (!exitcond_i)
+3 --> 
+	2  / true
+4 --> 
+* FSM state operations: 
+
+ <State 1>: 2.00ns
+ST_1: StgValue_5 (5)  [1/1] 0.00ns
+entry:0  call void (...)* @_ssdm_op_SpecInterface(i32* %in_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_1: StgValue_6 (6)  [1/1] 0.00ns
+entry:1  call void (...)* @_ssdm_op_SpecInterface(i8* %out_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_1: StgValue_7 (7)  [1/1] 0.00ns
+entry:2  call void (...)* @_ssdm_op_SpecInterface(i32* %numReps, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_1: numReps_read (8)  [1/1] 1.00ns
+entry:3  %numReps_read = call i32 @_ssdm_op_Read.ap_fifo.i32P(i32* %numReps)
+
+ST_1: StgValue_9 (9)  [1/1] 0.00ns
+entry:4  call void (...)* @_ssdm_op_SpecInterface(i32* %numReps_out, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
+
+ST_1: StgValue_10 (10)  [1/1] 1.00ns
+entry:5  call void @_ssdm_op_Write.ap_fifo.i32P(i32* %numReps_out, i32 %numReps_read)
+
+ST_1: tmp (11)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:268
+entry:6  %tmp = shl i32 %numReps_read, 7
+
+ST_1: StgValue_12 (12)  [1/1] 1.57ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:268
+entry:7  br label %0
+
+
+ <State 2>: 6.33ns
+ST_2: p_1_i (14)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:278
+:0  %p_1_i = phi i24 [ 0, %entry ], [ %r_V_cast_i, %._crit_edge.i ]
+
+ST_2: o_i (15)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:282
+:1  %o_i = phi i32 [ 0, %entry ], [ %p_i, %._crit_edge.i ]
+
+ST_2: t_i (16)  [1/1] 0.00ns
+:2  %t_i = phi i32 [ 0, %entry ], [ %t, %._crit_edge.i ]
+
+ST_2: exitcond_i (17)  [1/1] 2.52ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:268
+:3  %exitcond_i = icmp eq i32 %t_i, %tmp
+
+ST_2: t (18)  [1/1] 2.44ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:268
+:4  %t = add i32 %t_i, 1
+
+ST_2: StgValue_18 (19)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:268
+:5  br i1 %exitcond_i, label %.exit, label %1
+
+ST_2: tmp_1_i (24)  [1/1] 2.52ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:271
+:3  %tmp_1_i = icmp eq i32 %o_i, 0
+
+ST_2: o (34)  [1/1] 2.44ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:280
+._crit_edge.i:4  %o = add i32 1, %o_i
+
+ST_2: tmp_5_i (35)  [1/1] 2.52ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:282
+._crit_edge.i:5  %tmp_5_i = icmp eq i32 %o, 4
+
+ST_2: p_i (36)  [1/1] 1.37ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:282
+._crit_edge.i:6  %p_i = select i1 %tmp_5_i, i32 0, i32 %o
+
+
+ <State 3>: 3.57ns
+ST_3: p_1_cast_i (21)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:268
+:0  %p_1_cast_i = zext i24 %p_1_i to i32
+
+ST_3: tmp_2_i (22)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:268
+:1  %tmp_2_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str31)
+
+ST_3: StgValue_25 (23)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:269
+:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str13) nounwind
+
+ST_3: StgValue_26 (25)  [1/1] 1.57ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:271
+:4  br i1 %tmp_1_i, label %2, label %._crit_edge.i
+
+ST_3: tmp_V_2 (27)  [1/1] 1.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:272
+:0  %tmp_V_2 = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %in_V_V)
+
+ST_3: StgValue_28 (28)  [1/1] 1.57ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:273
+:1  br label %._crit_edge.i
+
+ST_3: p_Val2_s (30)  [1/1] 0.00ns
+._crit_edge.i:0  %p_Val2_s = phi i32 [ %tmp_V_2, %2 ], [ %p_1_cast_i, %1 ]
+
+ST_3: eo_V (31)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:275
+._crit_edge.i:1  %eo_V = trunc i32 %p_Val2_s to i8
+
+ST_3: StgValue_31 (32)  [1/1] 1.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:276
+._crit_edge.i:2  call void @_ssdm_op_Write.ap_fifo.volatile.i8P(i8* %out_V_V, i8 %eo_V)
+
+ST_3: r_V_cast_i (33)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:278
+._crit_edge.i:3  %r_V_cast_i = call i24 @_ssdm_op_PartSelect.i24.i32.i32.i32(i32 %p_Val2_s, i32 8, i32 31)
+
+ST_3: empty (37)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:285
+._crit_edge.i:7  %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str31, i32 %tmp_2_i)
+
+ST_3: StgValue_34 (38)  [1/1] 0.00ns  loc: /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:268
+._crit_edge.i:8  br label %0
+
+
+ <State 4>: 0.00ns
+ST_4: StgValue_35 (40)  [1/1] 0.00ns
+.exit:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0.625ns.
+
+ <State 1>: 2ns
+The critical path consists of the following:
+	fifo read on port 'numReps' [8]  (1 ns)
+	fifo write on port 'numReps_out' [10]  (1 ns)
+
+ <State 2>: 6.33ns
+The critical path consists of the following:
+	'phi' operation ('o_i', /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:282) with incoming values : ('p_i', /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:282) [15]  (0 ns)
+	'add' operation ('o', /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:280) [34]  (2.44 ns)
+	'icmp' operation ('tmp_5_i', /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:282) [35]  (2.52 ns)
+	'select' operation ('p_i', /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:282) [36]  (1.37 ns)
+
+ <State 3>: 3.57ns
+The critical path consists of the following:
+	fifo read on port 'in_V_V' (/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:272) [27]  (1 ns)
+	multiplexor before 'phi' operation ('ei.V') with incoming values : ('p_1_cast_i', /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:268) ('tmp.V', /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:272) [30]  (1.57 ns)
+	'phi' operation ('ei.V') with incoming values : ('p_1_cast_i', /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:268) ('tmp.V', /home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:272) [30]  (0 ns)
+	fifo write on port 'out_V_V' (/home/jf2715/BNN-PYNQ/bnn/src//library/finn-hlslib/streamtools.h:276) [32]  (1 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
